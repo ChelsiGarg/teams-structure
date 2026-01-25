@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
 
-const Navbar = () => {
+const Header = () => {
   return (
     <AppBar>
         <Toolbar>
@@ -10,4 +10,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Header
