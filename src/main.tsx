@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 // React Components
 import App from './App.tsx'
+import Navbar from './components/Navbar.tsx'
 
 // Styling
 import './index.css'
@@ -12,6 +13,7 @@ import './index.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <Navbar />
       <App />
     </BrowserRouter>
   </StrictMode>,
