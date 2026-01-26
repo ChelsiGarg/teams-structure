@@ -6,7 +6,6 @@ import { ThemeProvider, CssBaseline } from '@mui/material'
 
 // React Components
 import App from './App.tsx'
-import Header from './components/Header.tsx'
 
 // Styling
 import './index.css'
@@ -17,7 +16,6 @@ createRoot(document.getElementById('root')!).render(
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <Header />
         <App />
       </BrowserRouter>
     </ThemeProvider>
