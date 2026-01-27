@@ -13,11 +13,10 @@ import MainLayout from './components/MainLayout'
 function App() {
   return (
     <Routes>
-      <Route element={<MainLayout />} >
-        <Route path='/' element={<Navigate to='/team' replace/>}></Route>
-
-        <Route path='/team' element={<Home />}></Route>
-        <Route path='/team/:teamName' element={<Team />}></Route>   
+      <Route path="/" element={<MainLayout />} >
+        <Route index element = { <Navigate to="team" replace /> } />
+        <Route path="team" element={<Home />}></Route>
+        <Route path="team/:teamName" element={<Team />}></Route>   
       </Route>
     </Routes>
   )
