@@ -1,8 +1,9 @@
+// Components
+import TeamCard from "./TeamCard";
+
 const Home = () => {
   return (
-    <div>
-      All Teams appear here
-    </div>
+    <TeamCard />
   )
 }
 
