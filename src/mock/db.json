@@ -1,0 +1,179 @@
+[
+  {
+    "id": "analytics",
+    "name": "Analytics Team",
+    "logo": "/assets/logos/analytics.png",
+    "summary": "Transforms organizational data into actionable insights for strategic and operational decision-making.",
+
+    "overview": {
+      "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards, reports, and predictive models. Close collaboration with product, sales, finance, and leadership ensures that analytical outputs directly support decision-making at all levels.",
+      "mission": "Empower stakeholders across the organization with reliable, timely, and actionable data insights.",
+      "orgFit": "Serves as the intelligence layer of the organization, enabling informed decisions across departments.",
+      "stakeholders": [
+        "Executive Leadership",
+        "Product Management",
+        "Sales & Marketing",
+        "Finance"
+      ]
+    },
+
+    "members": [
+      {
+        "id": "an1",
+        "name": "Ananya Gupta",
+        "role": "Analytics Lead",
+        "experience": "8 years",
+        "specialization": "Analytics Strategy & BI Architecture",
+        "email": "ananya.gupta@org.com"
+      },
+      {
+        "id": "an2",
+        "name": "Rohit Mehra",
+        "role": "Senior Data Analyst",
+        "experience": "6 years",
+        "specialization": "SQL Optimization & Dashboarding",
+        "email": "rohit.mehra@org.com"
+      },
+      {
+        "id": "an3",
+        "name": "Sneha Iyer",
+        "role": "Data Analyst",
+        "experience": "4 years",
+        "specialization": "Data Visualization & Reporting",
+        "email": "sneha.iyer@org.com"
+      }
+    ],
+
+    "projects": [
+      {
+        "id": "anp1",
+        "name": "Executive Sales Performance Dashboard",
+        "status": "Active",
+        "techUsed": ["React", "MUI", "Python", "PostgreSQL"],
+        "description": "This project delivers a centralized, real-time dashboard that provides executive leadership with visibility into key sales metrics such as revenue, growth trends, regional performance, and conversion rates. Prior to this initiative, leadership relied on manually compiled reports, which were often outdated and inconsistent. The dashboard has significantly reduced reporting time, improved trust in data, and enabled faster, data-backed strategic decisions. Future enhancements include predictive revenue forecasting, scenario simulations, and tighter integration with CRM systems."
+      },
+      {
+        "id": "anp2",
+        "name": "Customer Churn Analysis & Prediction",
+        "status": "Completed",
+        "techUsed": ["Python", "Pandas", "Scikit-learn"],
+        "description": "The Customer Churn Analysis project focused on identifying patterns and behaviors that indicate a high likelihood of customer attrition. By analyzing historical usage data and customer interactions, the team developed predictive models that help business teams proactively engage at-risk customers. This initiative directly contributed to improved customer retention and informed targeted marketing strategies. Future scope includes real-time churn alerts and deeper integration with customer support systems."
+      },
+      {
+        "id": "anp3",
+        "name": "Marketing Campaign Effectiveness Insights",
+        "status": "Active",
+        "techUsed": ["SQL", "Tableau"],
+        "description": "This project evaluates the effectiveness of marketing campaigns across multiple channels by consolidating performance metrics into a single analytical view. It enables marketing teams to understand ROI, channel efficiency, and audience engagement more clearly. As a result, campaign planning has become more data-driven and cost-efficient. Planned future work includes attribution modeling and automated recommendations for campaign optimization."
+      }
+    ],
+
+    "techStack": {
+      "languages": ["Python", "SQL"],
+      "frameworks": ["React", "MUI"],
+      "tools": ["Tableau", "Airflow", "Jupyter"],
+      "platforms": ["AWS", "PostgreSQL", "Redshift"]
+    },
+
+    "responsibilities": {
+      "owns": [
+        "Business analytics and dashboards",
+        "KPI definition and reporting",
+        "Insight generation for stakeholders"
+      ],
+      "doesNotOwn": [
+        "Raw data ingestion pipelines",
+        "Core application development"
+      ]
+    }
+  },
+
+  {
+    "id": "engineering",
+    "name": "Engineering Team",
+    "logo": "/assets/logos/engineering.jpg",
+    "summary": "Designs, builds, and maintains scalable and reliable software systems for the organization.",
+
+    "overview": {
+      "description": "The Engineering team is responsible for building and maintaining the organization’s core software platforms and services. This includes frontend applications, backend services, and system integrations. The team focuses on delivering high-quality, scalable, and maintainable solutions while adhering to best practices in software engineering. Close collaboration with product, QA, and DevOps teams ensures timely delivery and system reliability.",
+      "mission": "Build reliable, scalable, and maintainable software that supports business growth.",
+      "orgFit": "Acts as the technical backbone of the organization, enabling product innovation and operational efficiency.",
+      "stakeholders": [
+        "Product Team",
+        "Quality Assurance",
+        "DevOps",
+        "Customer Support"
+      ]
+    },
+
+    "members": [
+      {
+        "id": "en1",
+        "name": "Vikram Singh",
+        "role": "Engineering Manager",
+        "experience": "10 years",
+        "specialization": "System Design & Architecture",
+        "email": "vikram.singh@org.com"
+      },
+      {
+        "id": "en2",
+        "name": "Neha Kapoor",
+        "role": "Senior Frontend Engineer",
+        "experience": "7 years",
+        "specialization": "React & UI Architecture",
+        "email": "neha.kapoor@org.com"
+      },
+      {
+        "id": "en3",
+        "name": "Arjun Rao",
+        "role": "Backend Engineer",
+        "experience": "5 years",
+        "specialization": "APIs & Microservices",
+        "email": "arjun.rao@org.com"
+      }
+    ],
+
+    "projects": [
+      {
+        "id": "enp1",
+        "name": "Core Platform Modernization",
+        "status": "Active",
+        "techUsed": ["React", "Java", "Spring Boot"],
+        "description": "This project focuses on modernizing the organization’s legacy platform by migrating it to a modular, service-oriented architecture. The initiative has improved system performance, reduced technical debt, and enabled faster feature delivery. For the organization, it has resulted in improved system stability and scalability. Future plans include adopting cloud-native patterns and enhancing observability and monitoring."
+      },
+      {
+        "id": "enp2",
+        "name": "Centralized Authentication & Authorization Service",
+        "status": "Completed",
+        "techUsed": ["Java", "OAuth2", "JWT"],
+        "description": "The Authentication Service provides a centralized mechanism for managing user authentication and authorization across all applications. This eliminated duplicated security logic and improved compliance and security posture. The service simplified user management and enabled faster onboarding of new applications. Future scope includes multi-factor authentication and single sign-on integrations."
+      },
+      {
+        "id": "enp3",
+        "name": "Event-Driven Notification Engine",
+        "status": "Active",
+        "techUsed": ["Node.js", "Kafka"],
+        "description": "This project introduces an event-driven notification system that supports email, SMS, and in-app notifications. It has decoupled notification logic from core applications, improving system flexibility and reliability. The organization benefits from consistent and timely user communications. Planned enhancements include personalization, analytics on notification effectiveness, and support for additional channels."
+      }
+    ],
+
+    "techStack": {
+      "languages": ["Java", "TypeScript", "JavaScript"],
+      "frameworks": ["React", "Spring Boot"],
+      "tools": ["Git", "Docker", "Jenkins"],
+      "platforms": ["AWS", "MySQL", "Kafka"]
+    },
+
+    "responsibilities": {
+      "owns": [
+        "Application development",
+        "System scalability and performance",
+        "Code quality and maintainability"
+      ],
+      "doesNotOwn": [
+        "Business reporting",
+        "Data analytics models"
+      ]
+    }
+  }
+]
