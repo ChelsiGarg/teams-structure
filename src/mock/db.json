@@ -2,7 +2,7 @@
   {
     "id": "analytics",
     "name": "Analytics Team",
-    "logo": "/assets/logos/analytics.png",
+    "logo": "/team-logos/analytics.png",
     "summary": "Transforms organizational data into actionable insights for strategic and operational decision-making.",
 
     "overview": {
@@ -91,7 +91,7 @@
   {
     "id": "engineering",
     "name": "Engineering Team",
-    "logo": "/assets/logos/engineering.jpg",
+    "logo": "/team-logos/engineering.jpg",
     "summary": "Designs, builds, and maintains scalable and reliable software systems for the organization.",
 
     "overview": {
