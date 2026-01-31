@@ -2,7 +2,7 @@
 import { Box, Card, CardContent, CardActions, CardMedia, Typography, Button } from '@mui/material';
 
 // assets
-import RandomImg from "../assets/image.png";
+import RandomImg from "../assets/engineering.jpg";
 
 const TeamCard = () => {
   return (
