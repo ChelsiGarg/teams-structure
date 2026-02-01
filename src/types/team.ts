@@ -41,7 +41,7 @@ export interface TechStack {
     platforms: string[];
 }
 
-export interface responsibilities {
+export interface Responsibilities {
     owns: string[];
     doesNotOwn: string[];
 }

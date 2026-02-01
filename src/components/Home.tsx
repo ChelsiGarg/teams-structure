@@ -1,3 +1,6 @@
+// React lib
+import { Grid } from "@mui/material";
+
 // Components
 import TeamCard from "./TeamCard";
 
@@ -9,17 +12,19 @@ const teams = teamsData as Team[];
 
 const Home = () => {
   return (
-    <>
+    <Grid container spacing={2} my={4} mx={6}>
       {
         teams.map(team => (
-          <TeamCard 
-            logo = {team.logo}
-            name = {team.name}
-            summary= {team.summary}
-          />
+          <Grid size={{xs: 12, sm: 6, md: 4}}  key={team.id}>
+            <TeamCard 
+              logo = {team.logo}
+              name = {team.name}
+              summary = {team.summary}
+            />
+          </Grid>
         ))
       }
-    </>
+    </Grid>
   )
 }
 
