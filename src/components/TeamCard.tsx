@@ -10,16 +10,20 @@ type teamCardProps = {
 
 const TeamCard = ({ logo, name, summary }: teamCardProps) => {
   return (
-    <Card sx={{maxWidth: "350px", height: "350px"}}>
+    <Card sx={{ height: "350px"}}>
         <CardMedia
             component="img"
-            height="140"
             image={logo}
-            alt="team-logo" 
+            alt={`${name} logo`}
+            sx = {{
+                height: 180,
+                objectFit: "contain",
+                p: 1
+            }}
         />
         <CardContent>
-            <Typography variant='h5' component="div">{name}</Typography>
-            <Typography variant='body2' sx={{height: "60px"}}>{summary}</Typography>
+            <Typography variant='h5' component="div" sx={{p: 0.5}}>{name}</Typography>
+            <Typography variant='body2' sx={{height: "50px"}}>{summary}</Typography>
         </CardContent>
         <CardActions>
             <Button>View Details</Button>

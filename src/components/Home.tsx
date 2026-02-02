@@ -12,7 +12,7 @@ const teams = teamsData as Team[];
 
 const Home = () => {
   return (
-    <Grid container spacing={2} my={4} mx={6}>
+    <Grid container spacing={4} sx={{m: 4}}>
       {
         teams.map(team => (
           <Grid size={{xs: 12, sm: 6, md: 4}}  key={team.id}>
