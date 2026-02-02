@@ -4,87 +4,30 @@
     "name": "Analytics Team",
     "logo": "/team-logos/analytics.png",
     "summary": "Transforms organizational data into actionable insights for strategic and operational decision-making.",
-
     "overview": {
-      "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards, reports, and predictive models. Close collaboration with product, sales, finance, and leadership ensures that analytical outputs directly support decision-making at all levels.",
+      "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards, reports, and predictive models.",
       "mission": "Empower stakeholders across the organization with reliable, timely, and actionable data insights.",
       "orgFit": "Serves as the intelligence layer of the organization, enabling informed decisions across departments.",
-      "stakeholders": [
-        "Executive Leadership",
-        "Product Management",
-        "Sales & Marketing",
-        "Finance"
-      ]
+      "stakeholders": ["Executive Leadership", "Product Management", "Sales & Marketing", "Finance"]
     },
-
     "members": [
-      {
-        "id": "an1",
-        "name": "Ananya Gupta",
-        "role": "Analytics Lead",
-        "experience": "8 years",
-        "specialization": "Analytics Strategy & BI Architecture",
-        "email": "ananya.gupta@org.com"
-      },
-      {
-        "id": "an2",
-        "name": "Rohit Mehra",
-        "role": "Senior Data Analyst",
-        "experience": "6 years",
-        "specialization": "SQL Optimization & Dashboarding",
-        "email": "rohit.mehra@org.com"
-      },
-      {
-        "id": "an3",
-        "name": "Sneha Iyer",
-        "role": "Data Analyst",
-        "experience": "4 years",
-        "specialization": "Data Visualization & Reporting",
-        "email": "sneha.iyer@org.com"
-      }
+      { "id": "an1", "name": "Ananya Gupta", "role": "Analytics Lead", "experience": "8 years", "specialization": "Analytics Strategy & BI Architecture", "email": "ananya.gupta@org.com" },
+      { "id": "an2", "name": "Rohit Mehra", "role": "Senior Data Analyst", "experience": "6 years", "specialization": "SQL Optimization & Dashboarding", "email": "rohit.mehra@org.com" },
+      { "id": "an3", "name": "Sneha Iyer", "role": "Data Analyst", "experience": "4 years", "specialization": "Data Visualization & Reporting", "email": "sneha.iyer@org.com" }
     ],
-
     "projects": [
-      {
-        "id": "anp1",
-        "name": "Executive Sales Performance Dashboard",
-        "status": "Active",
-        "techUsed": ["React", "MUI", "Python", "PostgreSQL"],
-        "description": "This project delivers a centralized, real-time dashboard that provides executive leadership with visibility into key sales metrics such as revenue, growth trends, regional performance, and conversion rates. Prior to this initiative, leadership relied on manually compiled reports, which were often outdated and inconsistent. The dashboard has significantly reduced reporting time, improved trust in data, and enabled faster, data-backed strategic decisions. Future enhancements include predictive revenue forecasting, scenario simulations, and tighter integration with CRM systems."
-      },
-      {
-        "id": "anp2",
-        "name": "Customer Churn Analysis & Prediction",
-        "status": "Completed",
-        "techUsed": ["Python", "Pandas", "Scikit-learn"],
-        "description": "The Customer Churn Analysis project focused on identifying patterns and behaviors that indicate a high likelihood of customer attrition. By analyzing historical usage data and customer interactions, the team developed predictive models that help business teams proactively engage at-risk customers. This initiative directly contributed to improved customer retention and informed targeted marketing strategies. Future scope includes real-time churn alerts and deeper integration with customer support systems."
-      },
-      {
-        "id": "anp3",
-        "name": "Marketing Campaign Effectiveness Insights",
-        "status": "Active",
-        "techUsed": ["SQL", "Tableau"],
-        "description": "This project evaluates the effectiveness of marketing campaigns across multiple channels by consolidating performance metrics into a single analytical view. It enables marketing teams to understand ROI, channel efficiency, and audience engagement more clearly. As a result, campaign planning has become more data-driven and cost-efficient. Planned future work includes attribution modeling and automated recommendations for campaign optimization."
-      }
+      { "id": "anp1", "name": "Executive Sales Performance Dashboard", "status": "Active", "techUsed": ["React", "MUI", "Python", "PostgreSQL"], "description": "Real-time executive dashboard providing visibility into revenue, growth trends, and conversion metrics." },
+      { "id": "anp2", "name": "Customer Churn Analysis & Prediction", "status": "Completed", "techUsed": ["Python", "Pandas", "Scikit-learn"], "description": "Predictive churn models enabling proactive customer retention strategies." }
     ],
-
     "techStack": {
       "languages": ["Python", "SQL"],
       "frameworks": ["React", "MUI"],
       "tools": ["Tableau", "Airflow", "Jupyter"],
       "platforms": ["AWS", "PostgreSQL", "Redshift"]
     },
-
     "responsibilities": {
-      "owns": [
-        "Business analytics and dashboards",
-        "KPI definition and reporting",
-        "Insight generation for stakeholders"
-      ],
-      "doesNotOwn": [
-        "Raw data ingestion pipelines",
-        "Core application development"
-      ]
+      "owns": ["Business analytics and dashboards", "KPI definition", "Insight generation"],
+      "doesNotOwn": ["Raw data ingestion pipelines", "Core application development"]
     }
   },
 
@@ -92,88 +35,121 @@
     "id": "engineering",
     "name": "Engineering Team",
     "logo": "/team-logos/engineering.jpg",
-    "summary": "Designs, builds, and maintains scalable and reliable software systems for the organization.",
-
+    "summary": "Designs, builds, and maintains scalable and reliable software systems.",
     "overview": {
-      "description": "The Engineering team is responsible for building and maintaining the organization’s core software platforms and services. This includes frontend applications, backend services, and system integrations. The team focuses on delivering high-quality, scalable, and maintainable solutions while adhering to best practices in software engineering. Close collaboration with product, QA, and DevOps teams ensures timely delivery and system reliability.",
-      "mission": "Build reliable, scalable, and maintainable software that supports business growth.",
-      "orgFit": "Acts as the technical backbone of the organization, enabling product innovation and operational efficiency.",
-      "stakeholders": [
-        "Product Team",
-        "Quality Assurance",
-        "DevOps",
-        "Customer Support"
-      ]
+      "description": "The Engineering team builds and maintains core software platforms including frontend, backend, and integrations.",
+      "mission": "Build scalable, secure, and maintainable software systems.",
+      "orgFit": "Technical backbone of the organization.",
+      "stakeholders": ["Product Team", "QA", "DevOps", "Customer Support"]
     },
-
     "members": [
-      {
-        "id": "en1",
-        "name": "Vikram Singh",
-        "role": "Engineering Manager",
-        "experience": "10 years",
-        "specialization": "System Design & Architecture",
-        "email": "vikram.singh@org.com"
-      },
-      {
-        "id": "en2",
-        "name": "Neha Kapoor",
-        "role": "Senior Frontend Engineer",
-        "experience": "7 years",
-        "specialization": "React & UI Architecture",
-        "email": "neha.kapoor@org.com"
-      },
-      {
-        "id": "en3",
-        "name": "Arjun Rao",
-        "role": "Backend Engineer",
-        "experience": "5 years",
-        "specialization": "APIs & Microservices",
-        "email": "arjun.rao@org.com"
-      }
+      { "id": "en1", "name": "Vikram Singh", "role": "Engineering Manager", "experience": "10 years", "specialization": "System Design", "email": "vikram.singh@org.com" },
+      { "id": "en2", "name": "Neha Kapoor", "role": "Senior Frontend Engineer", "experience": "7 years", "specialization": "React", "email": "neha.kapoor@org.com" },
+      { "id": "en3", "name": "Arjun Rao", "role": "Backend Engineer", "experience": "5 years", "specialization": "APIs & Microservices", "email": "arjun.rao@org.com" }
     ],
-
     "projects": [
-      {
-        "id": "enp1",
-        "name": "Core Platform Modernization",
-        "status": "Active",
-        "techUsed": ["React", "Java", "Spring Boot"],
-        "description": "This project focuses on modernizing the organization’s legacy platform by migrating it to a modular, service-oriented architecture. The initiative has improved system performance, reduced technical debt, and enabled faster feature delivery. For the organization, it has resulted in improved system stability and scalability. Future plans include adopting cloud-native patterns and enhancing observability and monitoring."
-      },
-      {
-        "id": "enp2",
-        "name": "Centralized Authentication & Authorization Service",
-        "status": "Completed",
-        "techUsed": ["Java", "OAuth2", "JWT"],
-        "description": "The Authentication Service provides a centralized mechanism for managing user authentication and authorization across all applications. This eliminated duplicated security logic and improved compliance and security posture. The service simplified user management and enabled faster onboarding of new applications. Future scope includes multi-factor authentication and single sign-on integrations."
-      },
-      {
-        "id": "enp3",
-        "name": "Event-Driven Notification Engine",
-        "status": "Active",
-        "techUsed": ["Node.js", "Kafka"],
-        "description": "This project introduces an event-driven notification system that supports email, SMS, and in-app notifications. It has decoupled notification logic from core applications, improving system flexibility and reliability. The organization benefits from consistent and timely user communications. Planned enhancements include personalization, analytics on notification effectiveness, and support for additional channels."
-      }
+      { "id": "enp1", "name": "Core Platform Modernization", "status": "Active", "techUsed": ["React", "Java", "Spring Boot"], "description": "Migration of legacy systems to modular services." },
+      { "id": "enp2", "name": "Centralized Auth Service", "status": "Completed", "techUsed": ["Java", "OAuth2", "JWT"], "description": "Centralized authentication and authorization." }
     ],
-
     "techStack": {
       "languages": ["Java", "TypeScript", "JavaScript"],
       "frameworks": ["React", "Spring Boot"],
       "tools": ["Git", "Docker", "Jenkins"],
       "platforms": ["AWS", "MySQL", "Kafka"]
     },
-
     "responsibilities": {
-      "owns": [
-        "Application development",
-        "System scalability and performance",
-        "Code quality and maintainability"
-      ],
-      "doesNotOwn": [
-        "Business reporting",
-        "Data analytics models"
-      ]
+      "owns": ["Application development", "System scalability", "Code quality"],
+      "doesNotOwn": ["Business analytics", "Data modeling"]
+    }
+  },
+
+  {
+    "id": "product",
+    "name": "Product Team",
+    "logo": "/team-logos/product.jpg",
+    "summary": "Defines product vision, roadmap, and user experience aligned with business goals.",
+    "overview": {
+      "description": "The Product team bridges business needs and technical execution by defining product strategy and requirements.",
+      "mission": "Deliver valuable products that solve real customer problems.",
+      "orgFit": "Strategic driver of product direction.",
+      "stakeholders": ["Engineering", "Design", "Sales", "Leadership"]
+    },
+    "members": [
+      { "id": "pr1", "name": "Rhea Malhotra", "role": "Product Manager", "experience": "7 years", "specialization": "Product Strategy", "email": "rhea.malhotra@org.com" },
+      { "id": "pr2", "name": "Amit Joshi", "role": "Associate PM", "experience": "3 years", "specialization": "User Research", "email": "amit.joshi@org.com" }
+    ],
+    "projects": [
+      { "id": "prp1", "name": "Product Roadmap Revamp", "status": "Active", "techUsed": ["Jira", "Confluence"], "description": "Re-alignment of roadmap based on customer feedback." }
+    ],
+    "techStack": {
+      "languages": [],
+      "frameworks": [],
+      "tools": ["Jira", "Confluence", "Figma"],
+      "platforms": []
+    },
+    "responsibilities": {
+      "owns": ["Product vision", "Requirements", "Prioritization"],
+      "doesNotOwn": ["Implementation", "Testing"]
+    }
+  },
+
+  {
+    "id": "devops",
+    "name": "DevOps Team",
+    "logo": "/team-logos/devops.png",
+    "summary": "Ensures reliable infrastructure, CI/CD pipelines, and system availability.",
+    "overview": {
+      "description": "The DevOps team manages infrastructure, deployments, monitoring, and operational reliability.",
+      "mission": "Enable fast, secure, and reliable software delivery.",
+      "orgFit": "Operational enabler across engineering teams.",
+      "stakeholders": ["Engineering", "QA", "Security"]
+    },
+    "members": [
+      { "id": "dv1", "name": "Saurabh Patel", "role": "DevOps Lead", "experience": "9 years", "specialization": "Cloud Architecture", "email": "saurabh.patel@org.com" },
+      { "id": "dv2", "name": "Meenal Shah", "role": "Site Reliability Engineer", "experience": "5 years", "specialization": "Monitoring & Reliability", "email": "meenal.shah@org.com" }
+    ],
+    "projects": [
+      { "id": "dvp1", "name": "CI/CD Pipeline Automation", "status": "Completed", "techUsed": ["Jenkins", "Docker"], "description": "Automated build and deployment pipelines." }
+    ],
+    "techStack": {
+      "languages": ["Bash", "YAML"],
+      "frameworks": [],
+      "tools": ["Docker", "Jenkins", "Prometheus"],
+      "platforms": ["AWS", "Kubernetes"]
+    },
+    "responsibilities": {
+      "owns": ["Infrastructure", "CI/CD", "Monitoring"],
+      "doesNotOwn": ["Feature development"]
+    }
+  },
+
+  {
+    "id": "qa",
+    "name": "Quality Assurance Team",
+    "logo": "/team-logos/qa.jpg",
+    "summary": "Ensures product quality through systematic testing and validation.",
+    "overview": {
+      "description": "The QA team validates functionality, performance, and reliability before releases.",
+      "mission": "Deliver defect-free, reliable software.",
+      "orgFit": "Quality gatekeeper for product releases.",
+      "stakeholders": ["Engineering", "Product", "DevOps"]
+    },
+    "members": [
+      { "id": "qa1", "name": "Pooja Nair", "role": "QA Lead", "experience": "8 years", "specialization": "Test Strategy", "email": "pooja.nair@org.com" },
+      { "id": "qa2", "name": "Rahul Verma", "role": "Automation Engineer", "experience": "4 years", "specialization": "Test Automation", "email": "rahul.verma@org.com" }
+    ],
+    "projects": [
+      { "id": "qap1", "name": "Automation Test Suite", "status": "Active", "techUsed": ["Selenium", "Cypress"], "description": "Automated regression testing framework." }
+    ],
+    "techStack": {
+      "languages": ["JavaScript", "Java"],
+      "frameworks": ["Cypress", "Selenium"],
+      "tools": ["Postman", "JMeter"],
+      "platforms": []
+    },
+    "responsibilities": {
+      "owns": ["Testing", "Quality validation"],
+      "doesNotOwn": ["Feature design", "Deployment"]
     }
   }
 ]
