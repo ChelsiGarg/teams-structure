@@ -8,6 +8,7 @@ import Team from './components/Team'
 // Styling
 import './App.css'
 import MainLayout from './components/MainLayout'
+import Overview from './components/Overview'
 
 
 function App() {
@@ -15,8 +16,11 @@ function App() {
     <Routes>
       <Route path="/" element={<MainLayout />} >
         <Route index element = { <Navigate to="team" replace /> } />
-        <Route path="team" element={<Home />}></Route>
-        <Route path="team/:teamName" element={<Team />}></Route>   
+        <Route path="team" element = {<Home />} />
+        <Route path="team/:teamName" element = {<Team />} >
+          <Route index element = {<Overview />} />
+          <Route path="overview" element = {<Overview />} />
+        </Route>  
       </Route>
     </Routes>
   )

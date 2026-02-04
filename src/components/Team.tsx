@@ -1,7 +1,10 @@
+import { Outlet } from "react-router-dom"
+
 const Team = () => {
   return (
     <div>
-      Specific team
+      <p>Team page</p>
+      <Outlet />
     </div>
   )
 }
