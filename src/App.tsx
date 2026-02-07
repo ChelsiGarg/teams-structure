@@ -4,6 +4,7 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 // React Components
 import Home from './components/Home'
 import Team from './components/Team'
+import NotFound from './components/NotFound'
 
 // Styling
 import './App.css'
@@ -17,10 +18,11 @@ function App() {
       <Route path="/" element={<MainLayout />} >
         <Route index element = { <Navigate to="team" replace /> } />
         <Route path="team" element = {<Home />} />
-        <Route path="team/:teamName" element = {<Team />} >
+        <Route path="team/:teamId" element = {<Team />} >
           <Route index element = {<Overview />} />
           <Route path="overview" element = {<Overview />} />
         </Route>  
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )

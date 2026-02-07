@@ -1,4 +1,4 @@
-export interface Team {
+export interface TeamModel {
     id: string;
     name: string;
     logo: string;
@@ -29,7 +29,7 @@ export interface Member {
 export interface Project {
     id: string;
     name: string;
-    status: "Active" | "Completed";
+    status: string;
     techUsed: string[];
     description?: string;
 }

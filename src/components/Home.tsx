@@ -6,9 +6,8 @@ import TeamCard from "./TeamCard";
 
 // Mock Data and its types
 import teamsData from "../mock/db.json";
-import type { Team } from "../types/team";
 
-const teams = teamsData as Team[];
+const teams = teamsData;
 
 const Home = () => {
   return (
@@ -17,9 +16,11 @@ const Home = () => {
         teams.map(team => (
           <Grid size={{xs: 12, sm: 6, md: 4}}  key={team.id}>
             <TeamCard 
+              id = {team.id}
               logo = {team.logo}
               name = {team.name}
-              summary = {team.summary}
+              desc = {team.summary}
+              showButton = {true}
             />
           </Grid>
         ))

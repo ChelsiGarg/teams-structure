@@ -6,12 +6,14 @@ import { Card, CardContent, CardActions, CardMedia, Typography, Button } from '@
 
 
 type teamCardProps = {
+    id: string;
     logo: string;
     name: string;
-    summary: string;
+    desc: string;
+    showButton: boolean;
 }
 
-const TeamCard = ({ logo, name, summary }: teamCardProps) => {
+const TeamCard = ({ id, logo, name, desc, showButton }: teamCardProps) => {
     const navigate = useNavigate();
 
     return (
@@ -28,11 +30,14 @@ const TeamCard = ({ logo, name, summary }: teamCardProps) => {
             />
             <CardContent>
                 <Typography variant='h5' component="div" sx={{p: 0.5}}>{name}</Typography>
-                <Typography variant='body2' sx={{height: "50px"}}>{summary}</Typography>
+                <Typography variant='body2' sx={{height: "50px"}}>{desc}</Typography>
             </CardContent>
-            <CardActions>
-                <Button onClick={() => navigate(`${name}`)}>View Details</Button>
-            </CardActions>
+            {
+                showButton &&
+                <CardActions>
+                    <Button onClick={() => navigate(`${id}`)}>View Details</Button>
+                </CardActions>
+            }
         </Card>
     )
 }

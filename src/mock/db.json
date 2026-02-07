@@ -5,7 +5,7 @@
     "logo": "/team-logos/analytics.png",
     "summary": "Transforms organizational data into actionable insights for strategic and operational decision-making.",
     "overview": {
-      "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards, reports, and predictive models.",
+      "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards and reports",
       "mission": "Empower stakeholders across the organization with reliable, timely, and actionable data insights.",
       "orgFit": "Serves as the intelligence layer of the organization, enabling informed decisions across departments.",
       "stakeholders": ["Executive Leadership", "Product Management", "Sales & Marketing", "Finance"]
