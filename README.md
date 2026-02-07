@@ -56,3 +56,6 @@ You don’t need these now, but design with them in mind:
 
 🔹 Documentation
 	Links to Confluence / internal docs
+
+## Future Work
+1. Make header dynamic: on main page, have DAP title but on specific team's page show team title + image

@@ -45,3 +45,15 @@ Because it cleanly separates:
 - presentational components (components that focus only on rendering UI based on props and do not handle data fetching or business logic)
 
 This makes future changes isolated and predictable.
+
+---
+
+### Q7. Why do you name a file `teams.selectors.ts` instead of putting the logic inside a component or a generic utils.ts file?
+**Answer:**
+The file is named `teams.selectors.ts` because it contains selector functions, which are pure functions responsible for retrieving or deriving specific data from a dataset.
+
+In this case, functions like `getTeamById` operate on the teams collection and return a specific team based on some criteria. Naming the file teams.selectors.ts clearly communicates two things:
+- Domain: The logic belongs to the teams data domain
+- Responsibility: The logic is for selecting or deriving data, not rendering UI or performing side effects
+
+---
