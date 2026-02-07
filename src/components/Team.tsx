@@ -1,11 +1,12 @@
+// React lib
+import { Box } from "@mui/material"
 import { Outlet } from "react-router-dom"
 
 const Team = () => {
   return (
-    <div>
-      <p>Team page</p>
+    <Box sx={{ bgcolor: "blue"}}>
       <Outlet />
-    </div>
+    </Box>
   )
 }
 
