@@ -58,8 +58,8 @@ In this case, functions like `getTeamById` operate on the teams collection and r
 
 ---
 
-### Q9. Why it is preferrable to include typescript in your react applications?
+### Q8. Why it is preferrable to include typescript in your react applications?
 
 ---
 
-### Q8. Why did you choose to use vite+typescript instead of just typescript for your react app?
+### Q9. Why did you choose to use vite+typescript instead of just typescript for your react app?
