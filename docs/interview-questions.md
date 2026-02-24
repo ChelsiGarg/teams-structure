@@ -57,3 +57,9 @@ In this case, functions like `getTeamById` operate on the teams collection and r
 - Responsibility: The logic is for selecting or deriving data, not rendering UI or performing side effects
 
 ---
+
+### Q8. Why it is preferrable to include typescript in your react applications?
+
+---
+
+### Q9. Why did you choose to use vite+typescript instead of just typescript for your react app?
