@@ -60,4 +60,4 @@ You don’t need these now, but design with them in mind:
 ## Future Work
 1. Make header dynamic: on main page, have DAP title but on specific team's page show team title + image
 
-## See the project livere [here](https://teamatlaas.netlify.app/team)
+## See the project live [here](https://team-atlas.netlify.app)
