@@ -62,3 +62,48 @@ Once I understood this interaction, I fixed the layout by:
 - Explicitly controlling the `AppBar` position (kept it `static`) & hence now the header became a part of normal document flow and its height was now counted by browser
 
 After aligning with CSS flow and MUI’s intended layout patterns, the overlap and scroll issues were resolved.
+
+---
+
+## 🔹 Challenge 4: Implement a collapsible side navbar on teams page
+
+### Problem
+While implementing a collapsible side navigation using MUI’s Drawer, I noticed that:
+- Clicking the menu button caused the entire screen to appear blocked
+- A backdrop covered the content
+    When you open something like a modal or temporary drawer:
+    - The main content becomes dimmed
+    - You cannot interact with it
+    - Focus shifts to the active component
+    That dimmed layer is the backdrop.
+- `overflow: hidden` was dynamically added to the <body> element
+
+At first, this was confusing because the Drawer was controlled only by state (open={isDrawerOpen}), and I hadn’t manually modified any global styles.
+
+### Why it happened
+The root cause was that MUI’s default Drawer variant is "temporary".
+In MUI:
+- `variant="temporary"` internally uses a Modal
+- It injects `overflow: hidden` into the <body> when `open = true`
+- It renders a backdrop that overlays the entire viewport
+
+Because of this:
+- The Drawer was removed from normal layout flow
+    - The Drawer was removed from normal layout flow because the default variant="temporary" in MUI renders it using a Modal, and that Modal uses `position: fixed`.
+- It behaved like an overlay instead of a sidebar
+- Background scrolling was intentionally disabled (caused by css property- overflow:hidden)
+- The screen appeared “fully taken over”
+
+### Solution
+- After analyzing the behavior, I recognized that the default Drawer variant in MUI is temporary, which is modal-based and responsible for scroll locking and backdrop rendering.
+- Since my requirement was a toggle-controlled side panel, I:
+    - Kept the default temporary variant
+    - Controlled visibility using React state (isDrawerOpen)
+    - Implemented explicit width (250px) inside the Drawer to ensure consistent panel sizing
+    - Used the onClose handler to properly manage open/close lifecycle
+    - This approach:
+        - Resolved visibility issues
+        - Maintained predictable overlay behavior
+        - Leveraged MUI’s intended modal-based navigation pattern for collapsible panels
+
+---

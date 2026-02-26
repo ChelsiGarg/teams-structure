@@ -63,3 +63,22 @@ In this case, functions like `getTeamById` operate on the teams collection and r
 ---
 
 ### Q9. Why did you choose to use vite+typescript instead of just typescript for your react app?
+
+---
+
+### Q10. When adding an icon button, why
+```html
+    <Button> <DeleteIcon /> </Button> 
+```
+is not preferred over 
+```html
+<IconButton> <DeleteIcon /> </IconButton>
+```
+**Answer:**
+1️⃣ Semantic Intent (Component Meaning): In Material UI, components are designed with specific use-cases.
+- `Button` → designed for text-based actions
+- `IconButton` → designed for icon-only actions
+2️⃣ Visual & Layout Differences
+- `Button` → comes with default settings to accomodate text. Example: horizontal padding optimised for text
+- `IconButton` → comes with default settings to render an icon. Example equal padding on all sides
+- Visually: `Button`  →  [   🗑   ]   `IconButton`   →   ( 🗑 )

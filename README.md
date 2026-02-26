@@ -61,3 +61,7 @@ You don’t need these now, but design with them in mind:
 1. Make header dynamic: on main page, have DAP title but on specific team's page show team title + image
 
 ## See the project live [here](https://team-atlas.netlify.app)
+
+## Start vite development server
+- npm run dev
+- Server will run on localhost:5173
