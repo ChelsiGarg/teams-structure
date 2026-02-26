@@ -1,6 +1,8 @@
 // React lib
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, useParams } from "react-router-dom"
+import { Box, Drawer, IconButton, Typography } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu"
 
 // Component types
 import type { TeamModel } from "../types/team";
@@ -8,7 +10,7 @@ import type { TeamModel } from "../types/team";
 // Selector to get specific team data
 import { getTeamById } from "../mock/teams.selector";
 
-// Custom Component
+// Component
 import NotFound from "./NotFound";
 
 export const TeamContext = React.createContext<TeamModel | undefined>(undefined);
@@ -19,13 +21,29 @@ const Team = () => {
   const id = params.teamId;
   const team = getTeamById(id);
 
+  const[isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   return (
     <>
       {
         team ?
-          <TeamContext.Provider value={team}>
-            <Outlet />
-          </TeamContext.Provider>
+          <>
+            <IconButton onClick={ ()=>setIsDrawerOpen(true) } color="inherit" aria-label="menu-button">
+              <MenuIcon />
+            </IconButton>
+            <Drawer 
+              anchor="left"  
+              open={ isDrawerOpen } 
+              onClose={ ()=>setIsDrawerOpen(false) } 
+            >
+              <Box width="250px" textAlign="center">
+                <Typography variant="h6" component="div">Side Panel</Typography>
+              </Box>
+            </Drawer>          
+            <TeamContext.Provider value={team}>
+              <Outlet />
+            </TeamContext.Provider>
+          </>
         :
         <NotFound />
       }
