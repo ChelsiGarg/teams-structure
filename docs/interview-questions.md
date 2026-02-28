@@ -59,10 +59,33 @@ In this case, functions like `getTeamById` operate on the teams collection and r
 ---
 
 ### Q8. Why it is preferrable to include typescript in your react applications?
+**Answer:**
+- JavaScript is dynamically typed, meaning type errors appear at runtime. TypeScript introduces static typing, which catches errors at compile time.
+- Without Typescript:
+```tsx
+    function UserCard({ age }) {
+        return <div>{age.toFixed(2)}</div>;     //toFixed() returns number till 2 decimal places
+    }
+```
+If age is passed as a string, the app crashes at runtime.
+- With Typescript:
+```tsx
+    type Props = {
+        age: number;
+    };
+
+    function UserCard({ age }: Props) {
+        return <div>{age.toFixed(2)}</div>;
+    }
+```
+If someone passes age="25", TypeScript throws a compile-time error.
+- Impact: Fewer production bugs.
 
 ---
 
-### Q9. Why did you choose to use vite+typescript instead of just typescript for your react app?
+### Q9. Why Vite is preferred over Creat-React-App(CRA) to start development server?
+**Answer:**
+Vite is preferred over Create React App because it starts the development server much faster and updates changes almost instantly. CRA bundles the whole app before running, which makes it slower as the project grows. Vite uses modern browser features, so it only processes what is needed, making development smoother.
 
 ---
 
@@ -82,3 +105,22 @@ is not preferred over
 - `Button` → comes with default settings to accomodate text. Example: horizontal padding optimised for text
 - `IconButton` → comes with default settings to render an icon. Example equal padding on all sides
 - Visually: `Button`  →  [   🗑   ]   `IconButton`   →   ( 🗑 )
+
+---
+
+### Q11. You've set the bg-color of drawer by applying css properties on slotProps.Paper. Why didn't you use sx property directly on drawer?
+**Answer:**
+- Drawer renders sth like this:
+```ts
+    Drawer
+    └── Modal
+        └── Paper  ← this is the visible panel
+```
+- When we do:
+```tsx
+    <Drawer sx={{ bgcolor: "secondary.main" }} />
+```
+You are styling the root wrapper, not the visible side panel. So nothing visually changes.
+- I didn’t apply sx directly on Drawer because the visible side panel is actually rendered by the internal Paper slot. In MUI v6+, internal elements are customized using `slotProps`, so I targeted `slotProps.paper` to correctly style the rendered surface.
+
+---
