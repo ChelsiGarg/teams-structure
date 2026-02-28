@@ -15,6 +15,14 @@ import NotFound from "./NotFound";
 
 export const TeamContext = React.createContext<TeamModel | undefined>(undefined);
 
+const navItems = [
+  { path: "overview", label: "Overview" },
+  { path: "members", label: "Members" },
+  { path: "techStack", label: "Tech Stack" },
+  { path: "projects", label: "Projects" },
+  { path: "responsibilities", label: "Responsibilities" },
+];
+
 
 const Team = () => {
   const params = useParams();
@@ -35,25 +43,33 @@ const Team = () => {
               anchor="left"  
               open={ isDrawerOpen } 
               onClose={() => setIsDrawerOpen(false)} 
+              slotProps={{
+                paper: {
+                  sx: {
+                    width: 250,
+                    bgcolor: "secondary.main",
+                    color: "secondary.contrastText"
+                  }
+                }
+              }}
             >
-              <Box width="250px" textAlign="center">
+              <Box textAlign="center">
                 <Typography variant="h6" component="div">Menu</Typography>
                 <List>
-                  <ListItemButton component={NavLink} to="overview" onClick={() => setIsDrawerOpen(false)}>
-                    <ListItemText primary="Overview" />
-                  </ListItemButton>
-                  <ListItemButton component={NavLink} to="members" onClick={() => setIsDrawerOpen(false)}>
-                    <ListItemText primary="Members" />
-                  </ListItemButton>
-                  <ListItemButton component={NavLink} to="techStack" onClick={() => setIsDrawerOpen(false)}>
-                    <ListItemText primary="Tech Stack" />
-                  </ListItemButton>
-                  <ListItemButton component={NavLink} to="projects" onClick={() => setIsDrawerOpen(false)}>
-                    <ListItemText primary="Projects" />
-                  </ListItemButton>
-                  <ListItemButton component={NavLink} to="responsibilities" onClick={() => setIsDrawerOpen(false)}>
-                    <ListItemText primary="Responsibilities" />
-                  </ListItemButton>
+                  {navItems.map(item => (
+                    <ListItemButton
+                      component={NavLink}
+                      to={item.path}
+                      sx={{
+                        "&.active": {
+                          bgcolor: "primary.main",
+                        }
+                      }}
+                    >
+                      <ListItemText primary={item.label} />
+                    </ListItemButton>
+                  ))}
+                  
                 </List>
               </Box>
             </Drawer>          
