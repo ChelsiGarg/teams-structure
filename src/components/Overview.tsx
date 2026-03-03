@@ -46,7 +46,7 @@ const Overview = () => {
               />
             </Grid>
           </Grid>
-          <KeyStakeHolders />
+          <KeyStakeHolders stakeholders={team.overview.stakeholders} />
         </>
       }
     </>

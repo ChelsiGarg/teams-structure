@@ -124,3 +124,11 @@ You are styling the root wrapper, not the visible side panel. So nothing visuall
 - I didn’t apply sx directly on Drawer because the visible side panel is actually rendered by the internal Paper slot. In MUI v6+, internal elements are customized using `slotProps`, so I targeted `slotProps.paper` to correctly style the rendered surface.
 
 ---
+
+### Q12. Explain difference between null & undefined in react.
+**Answer:**
+🔹 undefined
+    - A variable has been declared but not assigned a value (ex: let x) or the object property does not exist
+🔹 null
+    - Explicitly the variable is assigned a value null. Meaning: “There is intentionally no value.”
+- In React, `null` is commonly used for initial state or intentional absence of data, while `undefined` usually means something was not provided (like a missing prop). Both render nothing in JSX, but they represent different intent.
