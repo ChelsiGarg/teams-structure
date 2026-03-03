@@ -1,7 +1,14 @@
 // MUI components
-import { Box, Paper } from "@mui/material"
+import { Box, Paper, Stack, Typography } from "@mui/material"
 
-const KeyStakeHolders = () => {
+// Types
+import type { Stakeholder } from "../types/team";
+
+type KeyStakeHoldersProps = {
+    stakeholders: Stakeholder[] | undefined;
+}
+
+const KeyStakeHolders = ({stakeholders}: KeyStakeHoldersProps) => {
   return (
     <Box sx={{ position:"relative", mt: 8, mb: 6, mx: 20}}>
         {/* Floating title */}
@@ -28,12 +35,34 @@ const KeyStakeHolders = () => {
                 border: "2px solid",
                 borderRadius: 3,
                 borderColor: "primary.main",
-                height: "300px"
             }}
         >
-
+            <Stack
+                direction="row"
+                spacing={4}
+                sx={{
+                    width: "100%",
+                    px: 4  //horizontal margin inside paper
+                }}
+            >
+                { stakeholders?.map(item => (
+                    <Stack key={item.label} sx={{ flex: 1}}>
+                        <Box
+                            component="img"
+                            src={item.icon}
+                            alt={item.label}
+                            sx={{
+                            width: 40,
+                            height: 40,
+                            objectFit: "contain",
+                            }}
+                        />
+                        <Typography variant="body2" component="div" fontWeight={500}>{item.label}</Typography>
+                    </Stack>
+                ))}
+            </Stack>
         </Paper>
-      
+
     </Box>
   )
 }

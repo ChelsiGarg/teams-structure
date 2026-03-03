@@ -14,7 +14,12 @@ export interface Overview {
     description: string;
     mission: string;
     orgFit: string;
-    stakeholders?: string[];
+    stakeholders?: Stakeholder[];
+}
+
+export interface Stakeholder {
+    label: string;
+    icon: string;
 }
 
 export interface Member {

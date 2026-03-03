@@ -8,7 +8,12 @@
       "description": "The Analytics team is responsible for designing, building, and maintaining analytical solutions that convert raw organizational data into meaningful insights. The team works across the entire analytics lifecycle, from understanding business problems and defining metrics to delivering dashboards and reports",
       "mission": "Empower stakeholders across the organization with reliable, timely, and actionable data insights.",
       "orgFit": "Serves as the intelligence layer of the organization, enabling informed decisions across departments.",
-      "stakeholders": ["Executive Leadership", "Product Management", "Sales & Marketing", "Finance"]
+      "stakeholders": [
+        {"label": "Executive Leadership", "icon": "/stakeholder-icons/leadership.jpg"},
+        {"label": "Product Management", "icon": "/stakeholder-icons/product.png"},
+        {"label": "Sales & Marketing", "icon": "/stakeholder-icons/sales.png"},
+        {"label": "Finance", "icon": "/stakeholder-icons/finance.png"}
+      ]
     },
     "members": [
       { "id": "an1", "name": "Ananya Gupta", "role": "Analytics Lead", "experience": "8 years", "specialization": "Analytics Strategy & BI Architecture", "email": "ananya.gupta@org.com" },
@@ -40,7 +45,12 @@
       "description": "The Engineering team builds and maintains core software platforms including frontend, backend, and integrations.",
       "mission": "Build scalable, secure, and maintainable software systems.",
       "orgFit": "Technical backbone of the organization.",
-      "stakeholders": ["Product Team", "QA", "DevOps", "Customer Support"]
+      "stakeholders": [
+        {"label": "Product Team", "icon": "/stakeholder-icons/product.png"},
+        {"label": "QA", "icon": "/stakeholder-icons/qa.png"},
+        {"label": "DevOps", "icon": "/stakeholder-icons/devops.png"},
+        {"label": "Customer Support", "icon": "/stakeholder-icons/customer-support.png"}
+      ]
     },
     "members": [
       { "id": "en1", "name": "Vikram Singh", "role": "Engineering Manager", "experience": "10 years", "specialization": "System Design", "email": "vikram.singh@org.com" },
@@ -72,7 +82,12 @@
       "description": "The Product team bridges business needs and technical execution by defining product strategy and requirements.",
       "mission": "Deliver valuable products that solve real customer problems.",
       "orgFit": "Strategic driver of product direction.",
-      "stakeholders": ["Engineering", "Design", "Sales", "Leadership"]
+      "stakeholders": [
+        {"label": "Engineering", "icon": "/stakeholder-icons/engineering.png"},
+        {"label": "Design", "icon": "/stakeholder-icons/design.png"},
+        {"label": "Sales", "icon": "/stakeholder-icons/sales.png"},
+        {"label": "Leadership", "icon": "/stakeholder-icons/leadership.png"}
+      ]
     },
     "members": [
       { "id": "pr1", "name": "Rhea Malhotra", "role": "Product Manager", "experience": "7 years", "specialization": "Product Strategy", "email": "rhea.malhotra@org.com" },
@@ -102,7 +117,11 @@
       "description": "The DevOps team manages infrastructure, deployments, monitoring, and operational reliability.",
       "mission": "Enable fast, secure, and reliable software delivery.",
       "orgFit": "Operational enabler across engineering teams.",
-      "stakeholders": ["Engineering", "QA", "Security"]
+      "stakeholders": [
+        {"label": "Engineering", "icon": "/stakeholder-icons/engineering.png"},
+        {"label": "QA", "icon": "/stakeholder-icons/qa.png"},
+        {"label": "Security", "icon": "/stakeholder-icons/security.png"}
+      ]
     },
     "members": [
       { "id": "dv1", "name": "Saurabh Patel", "role": "DevOps Lead", "experience": "9 years", "specialization": "Cloud Architecture", "email": "saurabh.patel@org.com" },
@@ -132,7 +151,11 @@
       "description": "The QA team validates functionality, performance, and reliability before releases.",
       "mission": "Deliver defect-free, reliable software.",
       "orgFit": "Quality gatekeeper for product releases.",
-      "stakeholders": ["Engineering", "Product", "DevOps"]
+      "stakeholders": [
+        {"label": "Engineering", "icon": "/stakeholder-icons/engineering.png"},
+        {"label": "Product", "icon": "/stakeholder-icons/product.png"},
+        {"label": "DevOps", "icon": "/stakeholder-icons/devops.png"}
+      ]
     },
     "members": [
       { "id": "qa1", "name": "Pooja Nair", "role": "QA Lead", "experience": "8 years", "specialization": "Test Strategy", "email": "pooja.nair@org.com" },
