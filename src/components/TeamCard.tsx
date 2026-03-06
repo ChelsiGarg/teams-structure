@@ -17,7 +17,7 @@ const TeamCard = ({ id, logo, name, desc, showButton }: teamCardProps) => {
     const navigate = useNavigate();
 
     return (
-        <Card sx={{ height: "350px"}}>
+        <Card sx={{ px: 1, height: "380px"}}>
             <CardMedia
                 component="img"
                 image={logo}
@@ -35,7 +35,9 @@ const TeamCard = ({ id, logo, name, desc, showButton }: teamCardProps) => {
             {
                 showButton &&
                 <CardActions>
-                    <Button onClick={() => navigate(`${id}`)}>View Details</Button>
+                    <Button variant="contained" onClick={() => navigate(`${id}`)} sx={{ py: 2 }}>
+                        View Details
+                    </Button>
                 </CardActions>
             }
         </Card>
