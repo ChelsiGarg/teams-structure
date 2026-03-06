@@ -10,12 +10,12 @@ type KeyStakeHoldersProps = {
 
 const KeyStakeHolders = ({stakeholders}: KeyStakeHoldersProps) => {
   return (
-    <Box sx={{ position:"relative", mt: 8, mb: 6, mx: 20}}>
+    <Box sx={{ position:"relative", mt: 8, mb: 6, width: 'fit-content', mx: 'auto' }}>
         {/* Floating title */}
         <Box
             sx={{
                 position: "absolute",
-                top: -16,
+                top: -22,
                 left: "50%",    
                 transform: "translateX(-50%)",
                 bgcolor: "primary.main",
@@ -25,6 +25,7 @@ const KeyStakeHolders = ({stakeholders}: KeyStakeHoldersProps) => {
                 fontSize: "16px",
                 fontWeight: 600,
                 borderRadius: 2,
+                whiteSpace: 'nowrap',
             }}
         >
             Key Stakeholders
@@ -39,14 +40,16 @@ const KeyStakeHolders = ({stakeholders}: KeyStakeHoldersProps) => {
         >
             <Stack
                 direction="row"
-                spacing={4}
+                spacing={8}
                 sx={{
-                    width: "100%",
-                    px: 4  //horizontal margin inside paper
+                    px: 4,
+                    pt: 3,
+                    pb: 1,
+                    justifyContent: 'center'
                 }}
             >
                 { stakeholders?.map(item => (
-                    <Stack key={item.label} sx={{ flex: 1}}>
+                    <Stack key={item.label} spacing={1} alignItems="center">
                         <Box
                             component="img"
                             src={item.icon}
