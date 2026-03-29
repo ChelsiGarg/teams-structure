@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardActions, CardMedia, Typography, Button } from '@mui/material';
 
 
-type teamCardProps = {
+type TeamCardProps = {
     id: string;
     logo: string;
     name: string;
@@ -13,7 +13,7 @@ type teamCardProps = {
     showButton: boolean;
 }
 
-const TeamCard = ({ id, logo, name, desc, showButton }: teamCardProps) => {
+const TeamCard = ({ id, logo, name, desc, showButton }: TeamCardProps) => {
     const navigate = useNavigate();
 
     return (
