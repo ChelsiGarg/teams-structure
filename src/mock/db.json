@@ -16,9 +16,9 @@
       ]
     },
     "members": [
-      { "id": "an1", "name": "Ananya Gupta", "role": "Analytics Lead", "experience": "8 years", "specialization": "Analytics Strategy & BI Architecture", "email": "ananya.gupta@org.com" },
-      { "id": "an2", "name": "Rohit Mehra", "role": "Senior Data Analyst", "experience": "6 years", "specialization": "SQL Optimization & Dashboarding", "email": "rohit.mehra@org.com" },
-      { "id": "an3", "name": "Sneha Iyer", "role": "Data Analyst", "experience": "4 years", "specialization": "Data Visualization & Reporting", "email": "sneha.iyer@org.com" }
+      { "id": "AG1", "name": "Ananya Gupta", "role": "Analytics Lead", "experience": "8 years", "specialization": "Analytics Strategy & BI Architecture", "email": "ananya.gupta@org.com" },
+      { "id": "RM2", "name": "Rohit Mehra", "role": "Senior Data Analyst", "experience": "6 years", "specialization": "SQL Optimization & Dashboarding", "email": "rohit.mehra@org.com" },
+      { "id": "SI3", "name": "Sneha Iyer", "role": "Data Analyst", "experience": "4 years", "specialization": "Data Visualization & Reporting", "email": "sneha.iyer@org.com" }
     ],
     "projects": [
       { "id": "anp1", "name": "Executive Sales Performance Dashboard", "status": "Active", "techUsed": ["React", "MUI", "Python", "PostgreSQL"], "description": "Real-time executive dashboard providing visibility into revenue, growth trends, and conversion metrics." },
@@ -53,9 +53,9 @@
       ]
     },
     "members": [
-      { "id": "en1", "name": "Vikram Singh", "role": "Engineering Manager", "experience": "10 years", "specialization": "System Design", "email": "vikram.singh@org.com" },
-      { "id": "en2", "name": "Neha Kapoor", "role": "Senior Frontend Engineer", "experience": "7 years", "specialization": "React", "email": "neha.kapoor@org.com" },
-      { "id": "en3", "name": "Arjun Rao", "role": "Backend Engineer", "experience": "5 years", "specialization": "APIs & Microservices", "email": "arjun.rao@org.com" }
+      { "id": "VS1", "name": "Vikram Singh", "role": "Engineering Manager", "experience": "10 years", "specialization": "System Design", "email": "vikram.singh@org.com" },
+      { "id": "NK2", "name": "Neha Kapoor", "role": "Senior Frontend Engineer", "experience": "7 years", "specialization": "React", "email": "neha.kapoor@org.com" },
+      { "id": "AR3", "name": "Arjun Rao", "role": "Backend Engineer", "experience": "5 years", "specialization": "APIs & Microservices", "email": "arjun.rao@org.com" }
     ],
     "projects": [
       { "id": "enp1", "name": "Core Platform Modernization", "status": "Active", "techUsed": ["React", "Java", "Spring Boot"], "description": "Migration of legacy systems to modular services." },
@@ -90,8 +90,8 @@
       ]
     },
     "members": [
-      { "id": "pr1", "name": "Rhea Malhotra", "role": "Product Manager", "experience": "7 years", "specialization": "Product Strategy", "email": "rhea.malhotra@org.com" },
-      { "id": "pr2", "name": "Amit Joshi", "role": "Associate PM", "experience": "3 years", "specialization": "User Research", "email": "amit.joshi@org.com" }
+      { "id": "RM1", "name": "Rhea Malhotra", "role": "Product Manager", "experience": "7 years", "specialization": "Product Strategy", "email": "rhea.malhotra@org.com" },
+      { "id": "AJ2", "name": "Amit Joshi", "role": "Associate PM", "experience": "3 years", "specialization": "User Research", "email": "amit.joshi@org.com" }
     ],
     "projects": [
       { "id": "prp1", "name": "Product Roadmap Revamp", "status": "Active", "techUsed": ["Jira", "Confluence"], "description": "Re-alignment of roadmap based on customer feedback." }
@@ -124,8 +124,8 @@
       ]
     },
     "members": [
-      { "id": "dv1", "name": "Saurabh Patel", "role": "DevOps Lead", "experience": "9 years", "specialization": "Cloud Architecture", "email": "saurabh.patel@org.com" },
-      { "id": "dv2", "name": "Meenal Shah", "role": "Site Reliability Engineer", "experience": "5 years", "specialization": "Monitoring & Reliability", "email": "meenal.shah@org.com" }
+      { "id": "SP1", "name": "Saurabh Patel", "role": "DevOps Lead", "experience": "9 years", "specialization": "Cloud Architecture", "email": "saurabh.patel@org.com" },
+      { "id": "MS2", "name": "Meenal Shah", "role": "Site Reliability Engineer", "experience": "5 years", "specialization": "Monitoring & Reliability", "email": "meenal.shah@org.com" }
     ],
     "projects": [
       { "id": "dvp1", "name": "CI/CD Pipeline Automation", "status": "Completed", "techUsed": ["Jenkins", "Docker"], "description": "Automated build and deployment pipelines." }
@@ -158,8 +158,8 @@
       ]
     },
     "members": [
-      { "id": "qa1", "name": "Pooja Nair", "role": "QA Lead", "experience": "8 years", "specialization": "Test Strategy", "email": "pooja.nair@org.com" },
-      { "id": "qa2", "name": "Rahul Verma", "role": "Automation Engineer", "experience": "4 years", "specialization": "Test Automation", "email": "rahul.verma@org.com" }
+      { "id": "PN1", "name": "Pooja Nair", "role": "QA Lead", "experience": "8 years", "specialization": "Test Strategy", "email": "pooja.nair@org.com" },
+      { "id": "RV2", "name": "Rahul Verma", "role": "Automation Engineer", "experience": "4 years", "specialization": "Test Automation", "email": "rahul.verma@org.com" }
     ],
     "projects": [
       { "id": "qap1", "name": "Automation Test Suite", "status": "Active", "techUsed": ["Selenium", "Cypress"], "description": "Automated regression testing framework." }
