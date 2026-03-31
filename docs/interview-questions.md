@@ -132,3 +132,27 @@ You are styling the root wrapper, not the visible side panel. So nothing visuall
 🔹 null
     - Explicitly the variable is assigned a value null. Meaning: “There is intentionally no value.”
 - In React, `null` is commonly used for initial state or intentional absence of data, while `undefined` usually means something was not provided (like a missing prop). Both render nothing in JSX, but they represent different intent.
+
+---
+
+### Q13. What is the meaning of `size={{ xs: 12, sm: 6, md: 4 }}` in MUI Grid?
+**Answer:**
+MUI Grid is based on a 12-column layout system. The `size` prop tells each item how many of those 12 columns it should occupy at different breakpoints:
+- `xs: 12` → full width on extra-small screens, so 1 card per row
+- `sm: 6` → half width on small screens, so 2 cards per row
+- `md: 4` → one-third width on medium and larger screens, so 3 cards per row
+
+This makes the component responsive without changing the component structure.
+
+---
+
+### Q14. What does a value like `mt: 0.7` or `mt: 0.625` mean in MUI `sx`?
+**Answer:**
+In MUI, spacing values in the `sx` prop are usually multiplied by the theme spacing unit. By default, `theme.spacing(1)` equals `8px`.
+
+So:
+- `mt: 1` means `8px`
+- `mt: 0.5` means `4px`
+- `mt: 0.625` means `5px`
+
+This allows spacing to stay aligned with the design system instead of hardcoding pixel values everywhere.

@@ -17,7 +17,7 @@ const TeamCard = ({ id, logo, name, desc, showButton }: TeamCardProps) => {
     const navigate = useNavigate();
 
     return (
-        <Card sx={{ px: 1, height: "380px"}}>
+        <Card sx={{ px: 1, height: "380px" }}>
             <CardMedia
                 component="img"
                 image={logo}
