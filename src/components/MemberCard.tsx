@@ -1,5 +1,7 @@
+// React libraries
 import type { ReactElement, ReactNode } from "react";
 
+// MUI libraries
 import {
     AttachEmailOutlined,
     WorkHistoryOutlined,
@@ -41,7 +43,8 @@ function MemberCard({ id, name, role, experience, specialization, email }: Membe
     <Card
         elevation={0}
         sx={{
-            m: 2,
+            width: "100%",
+            height: "100%",
             border: "1px solid",
             borderColor: "divider",
             borderRadius: 3,
@@ -53,7 +56,15 @@ function MemberCard({ id, name, role, experience, specialization, email }: Membe
             },
         }}
     >
-        <CardContent sx={{ p: 2.5, "&:last-child": { pb: 2.5 } }}>
+        <CardContent
+            sx={{
+                p: 2.5,
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                "&:last-child": { pb: 2.5 },
+            }}
+        >
             <Stack direction="row" spacing={2} alignItems="center">
                 <Avatar
                     sx={{
@@ -76,7 +87,7 @@ function MemberCard({ id, name, role, experience, specialization, email }: Membe
                 </Stack>
             </Stack>
 
-            <Stack spacing={1.25} sx={{ mt: 2 }}>
+            <Stack spacing={1.25} sx={{ mt: 2, flexGrow: 1, justifyContent: "center" }}>
                 <DetailRow icon={<WorkHistoryOutlined fontSize="small" />} label="Experience">
                     {experience}
                 </DetailRow>

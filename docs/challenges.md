@@ -107,3 +107,36 @@ Because of this:
         - Leveraged MUI’s intended modal-based navigation pattern for collapsible panels
 
 ---
+
+## 🔹 Challenge 5: Building equal-height member cards with responsive MUI Grid
+
+### Problem
+While designing the Members page, I wanted:
+- exactly 3 cards per row on desktop
+- responsive fallback to fewer columns on smaller screens
+- equal height for all cards within the same row
+- different rows to still size naturally based on their own content
+
+At first, the layout looked inconsistent because some cards had more content than others, causing uneven row presentation.
+
+### Why it happened
+The key issue was understanding which element was actually being stretched.
+
+- MUI `Grid` with `container` uses flexbox internally
+- `alignItems="stretch"` stretches the direct Grid items in a row
+- it does **not** automatically force the nested card component to fill that stretched height
+
+Because of this, even though the Grid item had equal height, the `Card` inside it could still shrink to its own content height unless it explicitly expanded.
+
+### Solution
+I solved this by combining responsive Grid sizing with full-height cards:
+
+- Used responsive item sizes like `xs: 12`, `sm: 6`, `md: 4` to get 1 / 2 / 3 cards per row across breakpoints
+- Applied `alignItems="stretch"` on the Grid container so all items in the same row share the tallest row height
+- Applied `display: "flex"` on each Grid item so the card can expand cleanly inside it
+- Applied `width: "100%"` and `height: "100%"` on the card so it fills the grid cell consistently
+- Kept the inner content as a column flex layout so content remains vertically structured and predictable
+
+This gave me equal-height cards per row without forcing all rows to have the same global height.
+
+---
