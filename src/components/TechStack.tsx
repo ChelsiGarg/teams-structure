@@ -44,7 +44,7 @@ const TechStack = () => {
         {/* Tech stack content goes here */}
         {techStackEntries.map(([category, items]) => (
           <Grid key={category} size={{ xs: 12, sm: 6, md: 4}} sx={{ display: "flex" }}>
-            <Stack sx={{ height: "100%", width: "100%"}} spacing={1} p={2} >
+            <Stack sx={{ height: "100%", width: "100%", border: "1px solid"}} spacing={1} p={2} >
               <Stack direction="row" spacing={1} alignItems="center">
                 <Box sx={{ color: "primary.main", lineHeight: 0 }}>
                   {techStackMeta[category].icon}
