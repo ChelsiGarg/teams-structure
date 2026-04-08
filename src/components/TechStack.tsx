@@ -40,11 +40,11 @@ const TechStack = () => {
   const techStackEntries = Object.entries(techStack) as Array<[keyof TeamTechStack, string[]]>;
 
   return (
-    <Grid container alignItems="stretch" sx={{ px: { xs: 1.5, sm: 2, md: 3 }, mt: 0.7 }}>
+    <Grid container spacing={2} alignItems="stretch" sx={{ px: { xs: 1.5, sm: 2, md: 3 }, mt: 0.7, justifyContent: "center" }}>
         {/* Tech stack content goes here */}
         {techStackEntries.map(([category, items]) => (
-          <Grid key={category} size={{ xs: 12, sm: 6, md: 4}} sx={{ display: "flex" }}>
-            <Stack sx={{ height: "100%", width: "100%", border: "1px solid"}} spacing={1} p={2} >
+          <Grid key={category} size={{ xs: 12, sm: 6, md: 4}} sx={{ display: "flex", border: "1px solid", borderRadius: 2 }}>
+            <Stack sx={{ height: "100%", width: "100%", border: "1px solid", borderRadius: 2, borderColor: "divider" }} spacing={1} p={2} >
               <Stack direction="row" spacing={1} alignItems="center">
                 <Box sx={{ color: "primary.main", lineHeight: 0 }}>
                   {techStackMeta[category].icon}
