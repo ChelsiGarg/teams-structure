@@ -40,7 +40,7 @@ const TechStack = () => {
   const techStackEntries = Object.entries(techStack) as Array<[keyof TeamTechStack, string[]]>;
 
   return (
-    <Grid container spacing={2} alignItems="stretch" sx={{ px: { xs: 1.5, sm: 2, md: 3 }, mt: 0.7, justifyContent: "center" }}>
+    <Grid container spacing={2} alignItems="stretch" sx={{ px: { xs: 1.5, sm: 2, md: 3 }, mt: 0.7 }}>
         {/* Tech stack content goes here */}
         {techStackEntries.map(([category, items]) => (
           <Grid key={category} size={{ xs: 12, sm: 6, md: 4}} sx={{ display: "flex", border: "1px solid", borderRadius: 2 }}>
