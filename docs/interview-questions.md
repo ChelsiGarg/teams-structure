@@ -156,3 +156,71 @@ So:
 - `mt: 0.625` means `5px`
 
 This allows spacing to stay aligned with the design system instead of hardcoding pixel values everywhere.
+
+---
+
+### Q15. In the `TechStack` component, why couldn’t you use `.map()` directly on `techStack`, and why did you first convert it with `Object.entries(techStack)`?
+Code reference: `src/components/TechStack.tsx` where `techStack` is read from context and converted into `techStackEntries`.
+**Answer:**
+Because `techStack` is an object, not an array. Its shape is something like:
+
+```ts
+{
+    languages: string[];
+    frameworks: string[];
+    tools: string[];
+    platforms: string[];
+}
+```
+
+The `.map()` method exists on arrays, not on plain objects. So I first had to convert the object into an array-like structure using `Object.entries(techStack)`, and then iterate over the resulting key-value pairs.
+
+---
+
+### Q16. In this `TechStack` line `techStackEntries.map(([category, items]) => ...)`, what is the difference between `map((value) => ...)` and `map(([category, items]) => ...)`?
+Code reference: `src/components/TechStack.tsx` where `techStackEntries.map(([category, items]) => ...)` renders each category card.
+**Answer:**
+`map((value) => ...)` gives me the whole current element as one variable.
+
+For example, when iterating over `Object.entries(techStack)`, `value` would be:
+
+```ts
+["languages", ["Python", "SQL"]]
+```
+
+`map(([category, items]) => ...)` uses array destructuring, so the same value is immediately split into:
+- `category` → the object key
+- `items` → the array stored under that key
+
+This makes the code more readable because I can directly use meaningful names instead of writing `value[0]` and `value[1]`.
+
+---
+
+### Q17. In the `TechStack` component, why did you create a `techStackMeta` object for labels and icons instead of writing `if` or `switch` conditions inside JSX?
+Code reference: `src/components/TechStack.tsx` where `techStackMeta[category].icon` and `techStackMeta[category].label` are used inside the card header.
+**Answer:**
+I used a metadata object so that each category key could map to its display configuration in one place.
+
+For example, each category has:
+- a label
+- an icon
+
+This is better than writing repeated `if` or `switch` logic inside JSX because:
+- the render code stays cleaner
+- the mapping is easier to maintain
+- adding a new category becomes easier
+
+It is a simple example of a data-driven UI pattern.
+
+---
+
+### Q18. In the `techStackMeta` declaration, why is `Record<keyof TeamTechStack, { label: string; icon: JSX.Element }>` useful?
+Code reference: `src/components/TechStack.tsx` where `techStackMeta` is declared above the component.
+**Answer:**
+`Record<keyof TeamTechStack, ...>` makes sure the metadata object stays aligned with the `TechStack` type.
+
+That means TypeScript enforces that every category key has a corresponding metadata entry.
+
+So if I later add a new category like `databases` to `TeamTechStack`, TypeScript will immediately remind me to also add its label and icon in the metadata object.
+
+This improves maintainability and prevents UI mappings from getting out of sync with the data model.
