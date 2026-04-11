@@ -14,7 +14,7 @@ const Projects = () => {
     setStatuses(typeof value === 'string' ? value.split(',') : value);
   }
 
-  renderSelectedValue: (selected) => {
+  const renderSelectedValue = (selected: unknown) => {
     const values = selected as string[];
 
     if(values.length === 0) {
@@ -26,10 +26,11 @@ const Projects = () => {
     }
 
     return(
-      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap">
+      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap">   {/*understand flexGap concept here*/}
         {values.map((value) => (
           <Chip 
             key={value} 
+            // include the logic to cancel selection by using cross icon on the chip
             label={value.charAt(0).toUpperCase() + value.slice(1)} />
         ))}
       </Stack>
@@ -49,10 +50,11 @@ const Projects = () => {
           slotProps={{
             select: {
               multiple: true,
+              displayEmpty: true,
               renderValue: renderSelectedValue
             }
           }}
-          sx={{ minWidth: 200}}
+          sx={{ minWidth: 100}}
         >
           <MenuItem value="active">Active</MenuItem>
           <MenuItem value="inactive">Inactive</MenuItem>
