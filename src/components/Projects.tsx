@@ -2,8 +2,9 @@
 import { useState } from "react";
 
 // MUI libraries
-import { MenuItem, Stack, TextField } from "@mui/material"
+import { Chip, MenuItem, Stack, TextField } from "@mui/material"
 
+const statusOptions = ["active", "inactive", "completed"];
 
 const Projects = () => {
   const [statuses, setStatuses] = useState<string[]>([]);
@@ -11,6 +12,28 @@ const Projects = () => {
   const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setStatuses(typeof value === 'string' ? value.split(',') : value);
+  }
+
+  renderSelectedValue: (selected) => {
+    const values = selected as string[];
+
+    if(values.length === 0) {
+      return "Select status";
+    }
+
+    if(values.length === statusOptions.length) {
+      return "All statuses";
+    }
+
+    return(
+      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap">
+        {values.map((value) => (
+          <Chip 
+            key={value} 
+            label={value.charAt(0).toUpperCase() + value.slice(1)} />
+        ))}
+      </Stack>
+    )
   }
 
   return (
@@ -25,9 +48,11 @@ const Projects = () => {
           onChange={handleStatusChange}
           slotProps={{
             select: {
-              multiple: true
+              multiple: true,
+              renderValue: renderSelectedValue
             }
           }}
+          sx={{ minWidth: 200}}
         >
           <MenuItem value="active">Active</MenuItem>
           <MenuItem value="inactive">Inactive</MenuItem>
