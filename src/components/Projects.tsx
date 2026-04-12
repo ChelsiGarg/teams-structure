@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // MUI libraries
-import { Chip, MenuItem, Stack, TextField } from "@mui/material"
+import { Chip, MenuItem, Stack, TextField, Typography } from "@mui/material"
 
 const statusOptions = ["active", "inactive", "completed"];
 
@@ -22,11 +22,11 @@ const Projects = () => {
     const values = selected as string[];
 
     if(values.length === 0) {
-      return "Select status";
+      return <Typography variant="body2" sx={{ color: "text.disabled" }}>Select status</Typography>;
     }
 
     if(values.length === statusOptions.length) {
-      return "All statuses";
+      return <Typography variant="body2">All Status</Typography>;
     }
 
     return(
@@ -35,7 +35,12 @@ const Projects = () => {
           <Chip 
             key={value} 
             label={value.charAt(0).toUpperCase() + value.slice(1)} 
-            onDelete={() => handleChipDelete(value)}/>
+            color="secondary"
+            onDelete={() => handleChipDelete(value)}
+            onMouseDown={(e) => {
+              e.stopPropagation();
+            }}
+          />
         ))}
       </Stack>
     )
@@ -45,17 +50,30 @@ const Projects = () => {
     <Stack sx={{ p: 2, mt: 0.7 }} spacing={4}>
 
       {/* ask copilot to give suitable comment here about the below section */}
-      <Stack direction="row" display="flex">
+      <Stack direction="row" display="flex" useFlexGap>
         <TextField 
-          label="Status" 
+          label="Status"
           select 
           value={statuses}
+          size="small"
           onChange={handleStatusChange}
           slotProps={{
             select: {
               multiple: true,
               displayEmpty: true,
               renderValue: renderSelectedValue
+            },
+            inputLabel: {
+              shrink: true,
+              sx: { fontWeight: "bold" }
+            }
+          }}
+          sx= {{
+            "& .MuiSelect-select": {
+              display: "flex",
+              alignItems: "center",
+              pt: 1.5,
+              pb: 0.9
             }
           }}
         >
