@@ -14,6 +14,10 @@ const Projects = () => {
     setStatuses(typeof value === 'string' ? value.split(',') : value);
   }
 
+  const handleChipDelete = (valueToDelete: string) => {
+    setStatuses((prevChipStatuses) => prevChipStatuses.filter((chipStatus) => chipStatus !== valueToDelete));
+  }
+
   const renderSelectedValue = (selected: unknown) => {
     const values = selected as string[];
 
@@ -26,12 +30,12 @@ const Projects = () => {
     }
 
     return(
-      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap">   {/*understand flexGap concept here*/}
+      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap" useFlexGap>   {/*understand flexGap concept here*/}
         {values.map((value) => (
           <Chip 
             key={value} 
-            // include the logic to cancel selection by using cross icon on the chip
-            label={value.charAt(0).toUpperCase() + value.slice(1)} />
+            label={value.charAt(0).toUpperCase() + value.slice(1)} 
+            onDelete={() => handleChipDelete(value)}/>
         ))}
       </Stack>
     )
@@ -54,7 +58,6 @@ const Projects = () => {
               renderValue: renderSelectedValue
             }
           }}
-          sx={{ minWidth: 100}}
         >
           <MenuItem value="active">Active</MenuItem>
           <MenuItem value="inactive">Inactive</MenuItem>
