@@ -140,3 +140,52 @@ I solved this by combining responsive Grid sizing with full-height cards:
 This gave me equal-height cards per row without forcing all rows to have the same global height.
 
 ---
+
+## 🔹 Challenge 6: Building a multi-select status filter with chips in MUI
+
+### Problem
+While building the `Projects` page, I wanted the `Status` filter to support:
+- multiple selected values
+- chip-based display inside the field
+- a placeholder-like empty state (`Select status`)
+- a compact summary (`All statuses`) when everything is selected
+
+At first, this introduced a few related issues:
+- the select value needed to support multiple values instead of a single string
+- chip delete clicks opened the dropdown instead of only removing the chip
+- the empty display text overlapped with the floating label
+
+### Why it happened
+This came from how MUI `TextField` with `select` works internally:
+
+- multi-select uses the underlying `Select` component, so the controlled value becomes array-based
+- selected content shown inside the closed field is controlled by `renderValue`
+- the select opens from its trigger area, so interactions inside the rendered value can bubble up and open the menu
+- `displayEmpty` allows custom empty-state text, but the label still needs to shrink so both do not occupy the same space
+
+### Solution
+I solved this by combining MUI select configuration, controlled state, and event handling:
+
+- used `multiple: true` in `slotProps.select`
+- controlled the value with `useState<string[]>([])`
+- handled selection updates with `onChange`
+- normalized incoming values with:
+    - `typeof value === "string" ? value.split(",") : value`
+    - this keeps the state consistently as `string[]`
+- used `renderValue` to customize closed-field display:
+    - show muted `Select status` when empty
+    - show `All statuses` when all options are selected
+    - show chips for partial selections
+- used `onMouseDown={(event) => event.stopPropagation()}` on chips so delete clicks do not open the dropdown
+- used `displayEmpty: true` with a shrunk label to avoid overlap
+
+### Key learning
+The important shift was understanding that the visible content of a MUI select is not limited to plain text. Once I used `renderValue`, the field became a small rendering surface that needed both layout handling and event handling.
+
+The final behavior worked well because each concern was handled at the right level:
+- `onChange` updates selected values
+- `renderValue` controls how those values appear
+- `onMouseDown` prevents the select trigger from hijacking chip deletion
+- `displayEmpty` and label shrink keep the empty state readable
+
+---

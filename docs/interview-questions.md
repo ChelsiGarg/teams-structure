@@ -224,3 +224,73 @@ That means TypeScript enforces that every category key has a corresponding metad
 So if I later add a new category like `databases` to `TeamTechStack`, TypeScript will immediately remind me to also add its label and icon in the metadata object.
 
 This improves maintainability and prevents UI mappings from getting out of sync with the data model.
+
+---
+
+### Q19. Why is this normalization needed in a multi-select handler: `typeof value === "string" ? value.split(",") : value`?
+Code reference: `src/components/Projects.tsx` where the selected statuses are stored in state.
+**Answer:**
+In a multi-select, the component state should remain a `string[]`. However, the incoming select value can sometimes arrive as either:
+- a `string[]`
+- or a comma-separated `string`
+
+The normalization step converts both cases into the same final shape:
+- if it is already an array, use it directly
+- if it is a string like `"active,inactive"`, split it into `["active", "inactive"]`
+
+This keeps the state predictable and aligned with the component’s controlled value type.
+
+---
+
+### Q20. What does `renderValue` do in a MUI select?
+Code reference: `src/components/Projects.tsx` where `renderValue` is passed under `slotProps.select`.
+**Answer:**
+`renderValue` controls what the select field displays after selection.
+
+It does not change:
+- the list of dropdown options
+- the selected state itself
+
+It only customizes the visible content inside the select input area.
+
+That makes it useful for patterns like:
+- placeholder-like empty text such as `Select status`
+- chip-based rendering for selected values
+- summary text like `All statuses` when every option is selected
+
+---
+
+### Q21. Why did clicking a chip delete icon open the select dropdown, and why does `onMouseDown` fix it?
+Code reference: `src/components/Projects.tsx` where chips are rendered inside `renderValue`.
+**Answer:**
+The chips are rendered inside the select trigger area. Because of that, pointer events from the chip can bubble up to the parent select.
+
+MUI `Select` commonly reacts on `mousedown`, not only on `click`. So when the delete icon is pressed:
+- the `mousedown` event reaches the select
+- the dropdown opens
+- the chip interaction feels broken or interrupted
+
+Adding:
+
+```tsx
+onMouseDown={(event) => event.stopPropagation()}
+```
+
+prevents that `mousedown` event from reaching the parent select. Then the chip’s `onDelete` behavior can proceed without opening the menu.
+
+So the responsibilities are:
+- `onDelete` removes the chip from state
+- `onMouseDown` stops the select from opening during that interaction
+
+---
+
+### Q22. Why use `displayEmpty` together with a shrunk label in a MUI select?
+Code reference: `src/components/Projects.tsx` where the empty state displays `Select status`.
+**Answer:**
+`displayEmpty` allows the select to render custom content even when no value is selected.
+
+But once empty text is rendered, the label can visually overlap with that content unless the label is also shrunk. That is why the select needs both ideas together:
+- `displayEmpty` to show the empty-state display value
+- a shrunk label so the label stays floated above the content instead of sitting in the same space
+
+---
