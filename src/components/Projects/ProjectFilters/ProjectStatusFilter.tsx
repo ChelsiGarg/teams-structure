@@ -4,21 +4,23 @@ import type React from "react";
 // MUI libraries
 import { Chip, MenuItem, Stack, TextField, Typography } from "@mui/material"
 
-type ProjectFiltersProps = {
+type ProjectStatusFilterProps = {
     statusOptions: string[];
     statuses: string[];
-    setStatuses: React.Dispatch<React.SetStateAction<string[]>>;
+    handleStatusesChange: (statuses: string[]) => void;
 }
 
-const ProjectFilters = ({ statusOptions, statuses, setStatuses }: ProjectFiltersProps) => {
+const ProjectStatusFilter = ({ statusOptions, statuses, handleStatusesChange }: ProjectStatusFilterProps) => {
 
-    const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleSelectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        setStatuses(typeof value === 'string' ? value.split(',') : value);
+        const newStatuses = typeof value === 'string' ? value.split(',') : value;
+        handleStatusesChange(newStatuses);
     };
 
     const handleChipDelete = (valueToDelete: string) => {
-        setStatuses((prevChipStatuses) => prevChipStatuses.filter((chipStatus) => chipStatus !== valueToDelete));
+      const newStatuses = statuses.filter((status) => status !== valueToDelete);
+      handleStatusesChange(newStatuses);
     };
 
     const renderSelectedValue = (selected: unknown) => {
@@ -56,7 +58,7 @@ const ProjectFilters = ({ statusOptions, statuses, setStatuses }: ProjectFilters
           select 
           value={statuses}
           size="small"
-          onChange={handleStatusChange}
+          onChange={handleSelectChange}
           slotProps={{
             select: {
               multiple: true,
@@ -85,4 +87,4 @@ const ProjectFilters = ({ statusOptions, statuses, setStatuses }: ProjectFilters
   )
 }
 
-export default ProjectFilters
+export default ProjectStatusFilter
