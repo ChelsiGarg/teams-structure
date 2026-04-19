@@ -23,7 +23,7 @@ const Projects = () => {
       <ProjectFilters
         statusOptions={statusOptions}
         statuses={statuses}
-        handleStatusesChange={handleStatusesChange}
+        onStatusesChange={handleStatusesChange}
       />
 
     </Stack>

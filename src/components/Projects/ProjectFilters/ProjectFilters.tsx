@@ -4,15 +4,15 @@ import ProjectStatusFilter from "./ProjectStatusFilter";
 type ProjectFiltersProps = {
     statusOptions: string[];
     statuses: string[];
-    handleStatusesChange: (statuses: string[]) => void;
+    onStatusesChange: (statuses: string[]) => void;
 }
 
-const ProjectFilters = ( { statusOptions, statuses, handleStatusesChange }: ProjectFiltersProps ) => {
+const ProjectFilters = ( { statusOptions, statuses, onStatusesChange }: ProjectFiltersProps ) => {
   return (
     <ProjectStatusFilter
         statusOptions={statusOptions}
         statuses={statuses}
-        handleStatusesChange={handleStatusesChange}
+        onStatusesChange={onStatusesChange}
     />
   )
 }

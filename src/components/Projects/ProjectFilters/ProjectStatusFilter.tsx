@@ -7,20 +7,20 @@ import { Chip, MenuItem, Stack, TextField, Typography } from "@mui/material"
 type ProjectStatusFilterProps = {
     statusOptions: string[];
     statuses: string[];
-    handleStatusesChange: (statuses: string[]) => void;
+    onStatusesChange: (statuses: string[]) => void;
 }
 
-const ProjectStatusFilter = ({ statusOptions, statuses, handleStatusesChange }: ProjectStatusFilterProps) => {
+const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: ProjectStatusFilterProps) => {
 
     const handleSelectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
         const newStatuses = typeof value === 'string' ? value.split(',') : value;
-        handleStatusesChange(newStatuses);
+        onStatusesChange(newStatuses);
     };
 
     const handleChipDelete = (valueToDelete: string) => {
       const newStatuses = statuses.filter((status) => status !== valueToDelete);
-      handleStatusesChange(newStatuses);
+      onStatusesChange(newStatuses);
     };
 
     const renderSelectedValue = (selected: unknown) => {
