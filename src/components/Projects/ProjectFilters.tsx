@@ -1,24 +1,27 @@
 // React libraries
-import { useState } from "react";
+import type React from "react";
 
 // MUI libraries
 import { Chip, MenuItem, Stack, TextField, Typography } from "@mui/material"
 
-const statusOptions = ["active", "inactive", "completed"];
+type ProjectFiltersProps = {
+    statusOptions: string[];
+    statuses: string[];
+    setStatuses: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-const Projects = () => {
-  const [statuses, setStatuses] = useState<string[]>([]);
+const ProjectFilters = ({ statusOptions, statuses, setStatuses }: ProjectFiltersProps) => {
 
-  const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setStatuses(typeof value === 'string' ? value.split(',') : value);
-  }
+    const handleStatusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+        setStatuses(typeof value === 'string' ? value.split(',') : value);
+    };
 
-  const handleChipDelete = (valueToDelete: string) => {
-    setStatuses((prevChipStatuses) => prevChipStatuses.filter((chipStatus) => chipStatus !== valueToDelete));
-  }
+    const handleChipDelete = (valueToDelete: string) => {
+        setStatuses((prevChipStatuses) => prevChipStatuses.filter((chipStatus) => chipStatus !== valueToDelete));
+    };
 
-  const renderSelectedValue = (selected: unknown) => {
+    const renderSelectedValue = (selected: unknown) => {
     const values = selected as string[];
 
     if(values.length === 0) {
@@ -30,7 +33,7 @@ const Projects = () => {
     }
 
     return(
-      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap" useFlexGap>   {/*understand flexGap concept here*/}
+      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap" useFlexGap>   
         {values.map((value) => (
           <Chip 
             key={value} 
@@ -47,10 +50,7 @@ const Projects = () => {
   }
 
   return (
-    <Stack sx={{ p: 2, mt: 0.7 }} spacing={4}>
-
-      {/* ask copilot to give suitable comment here about the below section */}
-      <Stack direction="row" display="flex" useFlexGap>
+    <Stack direction="row" display="flex" useFlexGap>
         <TextField 
           label="Status"
           select 
@@ -82,9 +82,7 @@ const Projects = () => {
           <MenuItem value="completed">Completed</MenuItem>
         </TextField>
       </Stack>
-
-    </Stack>
   )
 }
 
-export default Projects
+export default ProjectFilters
