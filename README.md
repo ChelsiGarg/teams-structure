@@ -59,6 +59,8 @@ You don’t need these now, but design with them in mind:
 
 ## Future Work
 1. Make header dynamic: on main page, have DAP title but on specific team's page show team title + image
+2. On click of email from member card, one should be asked if they want to send message via email & if clicked yes, there gmail/otlook should get opened
+3. introduce lazy loading so that images of the page only load when they are required 
 
 ## See the project live [here](https://team-atlas.netlify.app)
 
