@@ -4,11 +4,17 @@ import { Stack } from "@mui/material";
 // Components
 import ProjectStatusFilter from "./ProjectStatusFilter";
 import ProjectSearchBar from "./ProjectSearchBar";
+import ProjectLayoutFilter from "./ProjectLayoutFilter";
+
+// types
+import { type ProjectLayout } from "../Projects";
 
 type ProjectFiltersProps = {
     statusOptions: string[];
     statuses: string[];
     onStatusesChange: (statuses: string[]) => void;
+    layout: ProjectLayout;
+    onLayoutChange: (layout: ProjectLayout) => void;
 }
 
 const ProjectFilters = ( { statusOptions, statuses, onStatusesChange }: ProjectFiltersProps ) => {
@@ -30,6 +36,10 @@ const ProjectFilters = ( { statusOptions, statuses, onStatusesChange }: ProjectF
           statusOptions={statusOptions}
           statuses={statuses}
           onStatusesChange={onStatusesChange}
+      />
+      <ProjectLayoutFilter 
+        layout={layout}
+        onLayoutChange={onLayoutChange}
       />
     </Stack>
   )

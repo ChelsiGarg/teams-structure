@@ -8,13 +8,19 @@ import { Stack } from "@mui/material"
 import ProjectFilters from "./ProjectFilters/ProjectFilters";
 
 const statusOptions = ["active", "inactive", "completed"];
+export type ProjectLayout = "grid" | "list";
 
 const Projects = () => {
   const [statuses, setStatuses] = useState<string[]>([]);
+  const [layout, setLayout] = useState<ProjectLayout>("grid");
 
   const handleStatusesChange = (nextStatuses: string[]) => {
     setStatuses(nextStatuses);
   };
+
+  const handleLayoutChange = (nextLayout: ProjectLayout) => {
+    setLayout(nextLayout);
+  }
 
   return (
     <Stack sx={{ p: 2, mt: 0.7 }} spacing={4}>
@@ -24,6 +30,8 @@ const Projects = () => {
         statusOptions={statusOptions}
         statuses={statuses}
         onStatusesChange={handleStatusesChange}
+        layout={layout}
+        onLayoutChange={handleLayoutChange}
       />
 
     </Stack>
