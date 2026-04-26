@@ -17,7 +17,7 @@ type ProjectFiltersProps = {
     onLayoutChange: (layout: ProjectLayout) => void;
 }
 
-const ProjectFilters = ( { statusOptions, statuses, onStatusesChange }: ProjectFiltersProps ) => {
+const ProjectFilters = ( { statusOptions, statuses, onStatusesChange, layout, onLayoutChange }: ProjectFiltersProps ) => {
   return (
     <Stack 
       direction={{ xs:"column", sm:"row" }} 

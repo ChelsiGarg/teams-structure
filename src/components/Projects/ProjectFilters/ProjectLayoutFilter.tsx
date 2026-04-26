@@ -1,5 +1,5 @@
 // MUI libraries
-import { ToggleButtonGroup, ToggleButton } from "@mui/material";
+import { Box, ToggleButtonGroup, ToggleButton, Typography } from "@mui/material";
 
 // MUI icons
 import GridViewIcon from '@mui/icons-material/GridView';
@@ -13,7 +13,7 @@ type ProjectLayoutFilterProps = {
   onLayoutChange: (layout: ProjectLayout) => void;
 }
 
-const ProjectLayoutFilter = () => {
+const ProjectLayoutFilter = ({ layout, onLayoutChange }: ProjectLayoutFilterProps) => {
 
   const handleLayoutChange = (_event: React.MouseEvent<HTMLElement>, nextLayout: ProjectLayout) => {
     onLayoutChange(nextLayout);
@@ -22,12 +22,48 @@ const ProjectLayoutFilter = () => {
 
   return (
     <ToggleButtonGroup 
+        value = {layout}
+        color="primary"
         exclusive
         aria-label = "project layout filter"
         onChange = {handleLayoutChange}
+        size = "small"
+        sx={{
+          "& .MuiToggleButton-root": {
+            border: "1px solid",
+            borderColor: "secondary.main",
+            borderRadius: "4px",
+          },
+          "& .Mui-selected": {
+              backgroundColor: "primary.main",
+              color: "primary.contrastText",
+            },
+          "& .MuiToggleButton-root:hover": {
+              backgroundColor: "primary.light",
+              color: "primary.contrastText",
+          }
+        }}
     >
-        <ToggleButton value="grid" aria-label="grid"><GridViewIcon /></ToggleButton>
-        <ToggleButton value="list" aria-label="list"><ViewListIcon /></ToggleButton>
+        <ToggleButton 
+          value="grid" 
+          aria-label="grid"
+          sx={{ textTransform: "none" }}
+          >
+            <Box display="flex" alignItems="center" gap={1}>
+              <GridViewIcon />
+              <Typography variant="body2" fontWeight="700">Grid</Typography>
+            </Box>
+        </ToggleButton>
+        <ToggleButton 
+          value="list" 
+          aria-label="list"
+          sx={{ textTransform: "none" }}
+          >
+            <Box display="flex" alignItems="center" gap={1}>
+              <ViewListIcon />
+              <Typography variant="body2" fontWeight="700">List</Typography>
+            </Box>
+        </ToggleButton>
     </ToggleButtonGroup>
   )
 }
