@@ -2,10 +2,17 @@
 import { Stack, TextField } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
-const ProjectSearchBar = () => {
+type ProjectSearchBarProps = {
+    query: string;
+    onQueryChange: (query: string) => void;
+}
+
+const ProjectSearchBar = ( { query, onQueryChange }: ProjectSearchBarProps ) => {
   return (
     <Stack>
       <TextField
+        value={query}
+        onChange={(e) => onQueryChange(e.target.value)}
         placeholder="Search Projects"
         variant="outlined"
         size="small"

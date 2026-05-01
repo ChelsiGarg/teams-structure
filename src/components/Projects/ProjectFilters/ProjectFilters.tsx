@@ -10,6 +10,8 @@ import ProjectLayoutFilter from "./ProjectLayoutFilter";
 import { type ProjectLayout } from "../Projects";
 
 type ProjectFiltersProps = {
+    query: string;
+    onQueryChange: (query: string) => void;
     statusOptions: string[];
     statuses: string[];
     onStatusesChange: (statuses: string[]) => void;
@@ -17,7 +19,7 @@ type ProjectFiltersProps = {
     onLayoutChange: (layout: ProjectLayout) => void;
 }
 
-const ProjectFilters = ( { statusOptions, statuses, onStatusesChange, layout, onLayoutChange }: ProjectFiltersProps ) => {
+const ProjectFilters = ( { query, onQueryChange, statusOptions, statuses, onStatusesChange, layout, onLayoutChange }: ProjectFiltersProps ) => {
   return (
     <Stack 
       direction={{ xs:"column", sm:"row" }} 
@@ -31,7 +33,10 @@ const ProjectFilters = ( { statusOptions, statuses, onStatusesChange, layout, on
         }
       }}
       >
-      <ProjectSearchBar />
+      <ProjectSearchBar 
+        query={query}
+        onQueryChange={onQueryChange}
+      />
       <ProjectStatusFilter
           statusOptions={statusOptions}
           statuses={statuses}
