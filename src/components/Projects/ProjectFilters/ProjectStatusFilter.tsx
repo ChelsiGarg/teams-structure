@@ -53,7 +53,7 @@ const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: Proj
   }
 
   return (
-    <Stack direction="row" display="flex" useFlexGap flexGrow={1}>
+    <Stack direction="row" useFlexGap flexGrow={1}>
       {/* work on to remove focus once we move out of status textfield */}
         <TextField 
           select 

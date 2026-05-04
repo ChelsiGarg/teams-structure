@@ -63,14 +63,14 @@ const Projects = () => {
         <Grid container spacing={2} >    { /* include shadow here to make it more card-like? */ }
           { projects.map((project) => (
             <Grid key = {project.id} size = {layout === "grid" ? {xs: 12, md: 6} : 12} sx={{ border: 1, borderColor: "divider", borderRadius: 2 }}>
-              <Stack direction="row" display="flex" spacing={2} sx={{ p:2, mb: 2 }}>
+              <Stack direction="row" spacing={2} sx={{ p:2, mb: 2 }}>   {/* stack has default display of flex, so we don't need to specify it here */}
                 <Typography variant="h6" sx={{ flexGrow: 1}}>{project.name}</Typography>
                 <Chip key={project.status} label={project.status} size="small" color={projectStatusChipColor(project.status)}/>
               </Stack>
-              <Stack spacing={2} sx={{ p:2, display: "flex" }}>
+              <Stack spacing={2} sx={{ p:2 }}>
                 <Typography variant="body1" sx={{ mb: 3, flexGrow: 1 }}>{project.description}</Typography>   {/* even after using flexGrow, the description is still not taking up all the space. */}
                 <Typography variant="body2" color="text.secondary">Tech Used</Typography>
-                <Stack direction="row" display="flex" spacing={1} sx={{ flexWrap: "wrap" }}>
+                <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
                   { project.techUsed.map((tech) => (
                     <Chip key={tech} label={tech} size="small" color="secondary"/>
                   ))}
