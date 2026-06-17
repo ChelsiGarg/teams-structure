@@ -27,7 +27,7 @@ const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: Proj
     const values = selected as string[];
 
     if(values.length === 0) {
-      return <Typography variant="body2" sx={{ color: "text.disabled" }}>Select status</Typography>;
+      return <Typography variant="body2" sx={{ color: "text.disabled", fontSize: 14 }}>Select status</Typography>;
     }
 
     if(values.length === statusOptions.length) {
@@ -35,12 +35,13 @@ const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: Proj
     }
 
     return(
-      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap" useFlexGap>   
+      <Stack direction="row" spacing={1} display="flex" flexWrap="wrap" useFlexGap aria-label="Project Status Filters">   
         {values.map((value) => (
           <Chip 
             key={value} 
             label={value.charAt(0).toUpperCase() + value.slice(1)} 
             color="secondary"
+            size="small"
             onDelete={() => handleChipDelete(value)}
             onMouseDown={(e) => {
               e.stopPropagation();
@@ -52,9 +53,9 @@ const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: Proj
   }
 
   return (
-    <Stack direction="row" display="flex" useFlexGap>
+    <Stack direction="row" useFlexGap flexGrow={1}>
+      {/* work on to remove focus once we move out of status textfield */}
         <TextField 
-          label="Status"
           select 
           value={statuses}
           size="small"
@@ -65,17 +66,11 @@ const ProjectStatusFilter = ({ statusOptions, statuses, onStatusesChange }: Proj
               displayEmpty: true,
               renderValue: renderSelectedValue
             },
-            inputLabel: {
-              shrink: true,
-              sx: { fontWeight: "bold" }
-            }
           }}
           sx= {{
             "& .MuiSelect-select": {
               display: "flex",
               alignItems: "center",
-              pt: 1.5,
-              pb: 0.9
             }
           }}
         >
