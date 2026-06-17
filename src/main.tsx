@@ -11,11 +11,13 @@ import App from './App.tsx'
 import './index.css'
 import theme from './theme.ts'
 
+const basename = import.meta.env.PROD ? "/teams-structure" : "/";
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
