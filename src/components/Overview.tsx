@@ -9,6 +9,9 @@ import KeyStakeHolders from "./KeyStakeHolders";
 import { TeamContext } from "./Team";
 import TeamCard from "./TeamCard";
 
+// utilities
+import { getAssetUrl } from "../utils/getAssetUrl";
+
 const Overview = () => {
   const team = useContext(TeamContext);
 
@@ -21,7 +24,7 @@ const Overview = () => {
             <Grid size={{xs: 12, md: 4}}>
               <TeamCard 
                 id = {team.id}
-                logo = {"/team-logos/role.png"}
+                logo = {getAssetUrl("team-logos/role.png")}
                 name = "Our Role"
                 desc = {team.overview.description}
                 showButton = {false}
@@ -30,7 +33,7 @@ const Overview = () => {
             <Grid size={{xs: 12, md: 4}}>
               <TeamCard 
                 id = {team.id}
-                logo = {"/team-logos/mission.png"}
+                logo = {getAssetUrl("team-logos/mission.png")}
                 name = "Our Mission"
                 desc = {team.overview.mission}
                 showButton = {false}
@@ -39,7 +42,7 @@ const Overview = () => {
             <Grid size={{xs: 12, md: 4}}>
               <TeamCard 
                 id = {team.id}
-                logo = {"/team-logos/position.png"}
+                logo = {getAssetUrl("team-logos/position.png")}
                 name = "Our Position"
                 desc = {team.overview.orgFit}
                 showButton = {false}
