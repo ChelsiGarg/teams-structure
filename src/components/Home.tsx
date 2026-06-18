@@ -7,6 +7,9 @@ import TeamCard from "./TeamCard";
 // Mock Data and its types
 import teamsData from "../mock/db.json";
 
+// utilities
+import { getAssetUrl } from "../utils/getAssetUrl";
+
 const teams = teamsData;
 
 const Home = () => {
@@ -17,7 +20,7 @@ const Home = () => {
           <Grid size={{xs: 12, sm: 6, md: 4}}  key={team.id}>
             <TeamCard 
               id = {team.id}
-              logo = {team.logo}
+              logo = {getAssetUrl(team.logo)}
               name = {team.name}
               desc = {team.summary}
               showButton = {true}

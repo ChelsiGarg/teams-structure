@@ -4,6 +4,9 @@ import { Box, Paper, Stack, Typography } from "@mui/material"
 // Types
 import type { Stakeholder } from "../types/team";
 
+// utilities
+import { getAssetUrl } from "../utils/getAssetUrl";
+
 type KeyStakeHoldersProps = {
     stakeholders: Stakeholder[] | undefined;
 }
@@ -52,7 +55,7 @@ const KeyStakeHolders = ({stakeholders}: KeyStakeHoldersProps) => {
                     <Stack key={item.label} spacing={1} alignItems="center">
                         <Box
                             component="img"
-                            src={item.icon}
+                            src={getAssetUrl(item.icon)}
                             alt={item.label}
                             sx={{
                             width: 40,
