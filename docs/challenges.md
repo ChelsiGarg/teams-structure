@@ -189,3 +189,61 @@ The final behavior worked well because each concern was handled at the right lev
 - `displayEmpty` and label shrink keep the empty state readable
 
 ---
+
+## 🔹 Challenge 7: Migrating deployment from Netlify to GitHub Pages with automated CI/CD
+
+### Problem
+Initially, the React application was hosted on Netlify, which worked fine technically but raised a usability issue during external review:
+- reviewers were hesitant to access a third-party hosted site
+- hosting outside GitHub reduced visibility and credibility for developers who like to see and evaluate code directly.
+
+When I moved to GitHub Pages for better trust and accessibility, a new set of challenges emerged:
+- after every push to remote/main branch, I had to manually rebuild the project to reflect latest changes on hosted website
+- routing broke in production (404 errors)
+- static assets like images failed to load
+- confusion between different GitHub Pages deployment mechanisms (branch vs actions)
+
+### Why it happened
+This challenge was a result of differences in hosting environments and deployment mechanisms:
+
+1. Manual Deployment Limitation
+Initially, deployment was done manually as I was not using `GitHub Actions` but `Deploy from a branch`. This meant:
+- every new change required rebuilding
+- no automatic sync between main branch and live site
+- increased chances of:
+    - forgetting deployments
+    - inconsistency between code and production
+
+2. 404 Errors (Routing Issue)
+- In `main.tsx` file where `BrowserRouter` is configured, I didn't add a basename.
+    - Without basename, routes were resolved from /
+    - but actual base path was /teams-structure/ on prod
+    - Result:
+        - /overview → works in dev
+        - /overview → 404 in production
+
+3. Static assets like images failed to load
+This problem occurred because in `vite.config.ts`, I haven't given this value: `base: "/teams-structure/"`
+- Vite uses this value to build correct asset paths.
+- without it:
+    - JS, CSS, and images are loaded from /
+    - GitHub Pages expects /teams-structure/
+    - Result:
+        - /assets/index.js ❌
+        - /teams-structure/assets/index.js ✅
+- Even after setting the base correctly, images were still not rendering.
+    - Since Vite now expects assets to be served from /teams-structure/, any hardcoded paths (like /images/logo.png) break
+    - To fix this, asset paths needed to be adjusted
+    - Used `getAssetUrl` helper function to dynamically prepend the correct base path (like /teams-structure/images/logo.png)
+    - This ensured all assets were resolved correctly in production 
+
+4. Brnach vs actions confusion
+- After switching to `Github Actions`, I had created my own workflow & for this, I created deploy.yml using AI
+- In this file, I've initially used: peaceiris/actions-gh-pages which deploys to gh-pages branch. 
+- But GitHub Pages was configured as: Source = GitHub Actions. This caused mismatch & as a result:
+    - deployment not being recognized
+    - no site URL appearing
+- To fix these issues, I modified deploy.yml file, & used actions/upload-pages-artifact. This
+    - eliminated manual deployment effort
+    - ensured production always matches latest code
+    - no more gh-pages branch needed
